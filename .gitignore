@@ -1,0 +1,12 @@
+spa/node_modules
+spa/sftp-config.json
+spa/_build
+spa/npm-debug.log
+spa/.idea
+spa/assets/styles/style.css
+spa/assets/styles/style.min.css
+
+
+api/.DS_Store
+api/.sass-cache
+api/node_modules/

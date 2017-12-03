@@ -1,0 +1,27 @@
+<!-- Modal Structure -->
+<div id="modalEval" class="modal">
+   <div class="modal-content">
+      <h4>Avalie essa oportunidade:</h4>
+      <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea ng-model="formdata.comment" id="textarea" class="materialize-textarea"></textarea>
+          <label for="textarea1">Comentário</label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <span>Avaliação:</span>
+      <jk-rating-stars
+      max-rating="5"
+      rating="formdata.stars"
+      read-only=""
+      on-rating="panel.onRating(rating)">
+      </jk-rating-stars>
+   </div>
+   <div class="modal-footer">
+      <a href="" class="modal-action modal-close">Fechar</a>
+      <a href="" ng-click="validate()" class="modal-action">Enviar</a>
+   </div>
+</div>

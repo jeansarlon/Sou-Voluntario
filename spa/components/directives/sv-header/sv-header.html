@@ -1,0 +1,16 @@
+<!-- Main navigation -->
+<header class="header" ng-class="{'has-bg': viewInfo.bg}" role="banner" itemtype="http://schema.org/WPHeader" ng-style="viewInfo.bg">
+   <div id="inner-header" class="container flex flex-column">
+      
+      
+      <div class="header-content flex flex-item-1 flex-middle flex-center flex-column z-2">
+         <h1 class="view-title white-text fade">{{viewInfo.title}}</h1>
+          
+         <ul class="breadcrumb flex">
+            <li  class="crumb-item" ng-repeat="bc in crumble.trail">
+               <a ng-href="#{{bc.path}}">{{bc.label}}</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+</header>

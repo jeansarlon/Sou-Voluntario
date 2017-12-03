@@ -1,0 +1,85 @@
+/******************************************************************
+
+Site Name: Sou Voluntário
+Code: Jean Sarlôn
+Date: september 2017
+
+******************************************************************/
+
+@import "partials/normalize";
+
+@import "materialize/main";
+@import "partials/global";
+@import "components/main-nav";
+@import "components/slider";
+@import "components/button";
+@import "components/card";
+@import "components/side-nav";
+@import "components/modal";
+@import "components/forms";
+@import "components/masonry";
+@import "components/ratingstars";
+@import "components/evaluations";
+@import "components/sv-separator";
+@import "components/opportunity";
+@import "components/featuredbar";
+@import "components/data-list";
+@import "components/app-footer";
+@import "components/last-opportunities";
+@import "components/be-a-volunteer";
+@import "components/accessibility";
+@import "components/about";
+
+@import "objects/gesture";
+@import "objects/info-icons";
+@import "objects/sv-header";
+@import "objects/opportunity";
+@import "objects/organization";
+@import "objects/panel-home";
+@import "trumps/index";
+@import "trumps/form";
+
+
+
+@media print {
+
+	// styles in print.scss
+	@import "partials/print";
+}
+
+
+/* The starting CSS styles for the enter animation */
+.fade.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+.fade.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+/* The starting CSS styles for the enter animation */
+.slideUp.ng-enter {
+  transition:1s linear all;
+  opacity:0;
+  transform: translateY(60px);
+}
+
+/* The finishing CSS styles for the enter animation */
+.slideUp.ng-enter.ng-enter-active {
+  opacity:1;
+  transform: translateY(0);
+  
+}
+
+@keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+   }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}

@@ -1,0 +1,35 @@
+.modal.modal {
+   
+   @media all and (min-width: 993px){
+      width: 50%;
+   }
+   
+   .modal-content p {
+      padding: 40px;
+   }
+   
+   .modal-footer {
+      display: flex;
+      align-items: stretch;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+      
+      a {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex: 1;
+         text-align: center;
+         margin: 0;
+         color: #fff;
+         height: auto;
+         line-height: normal;
+         background-color: color("grey", "lighten-1");
+         
+         &:last-of-type {
+            background-color:  color("red", "lighten-1");
+         }
+      }
+   }
+}

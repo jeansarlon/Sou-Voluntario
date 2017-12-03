@@ -1,0 +1,40 @@
+.organization-page {
+   background-color: rgba(222,222,222,.32);
+   padding-bottom: 0px;
+   
+   .organization-info {
+      position: relative;
+      margin-top: 0;
+      z-index: 2;
+      top: -90px;
+      animation-name: fade-in;
+      animation-duration: .5s;
+      overflow: visible;
+      margin-bottom: -40px;
+      
+      .collection-item{
+         &.main{
+            p{
+               padding: 20px 0;
+               font-style: italic;
+               font-size: 1.2rem;
+            }
+         }
+         
+         .title.acent-font{
+            font-size: 1.3rem;
+            padding: 20px 0;
+         }
+      }
+      
+      .organization-logo {
+         transform: translateY(-50%);
+         height: 100px;
+         width: 100px;
+         object-fit: cover;
+         border-radius: 50%;
+         margin-bottom: -40px;
+         background-color: #fff;
+      }
+   }
+}

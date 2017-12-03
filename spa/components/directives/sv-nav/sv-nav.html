@@ -1,0 +1,40 @@
+<nav role="navigation" class="main-nav z-3" itemscope itemtype="http://schema.org/SiteNavigationElement">
+   <div class="container flex flex-space-between flex-middle">
+
+      <!-- logo -->
+      <input type="checkbox" ng-checked="sideControl" class="mobile-nav-control browser-default" id="mobileNavControl" name="mobileNavControl">
+      <label ng-click="sideControl = !sideControl" class="hide-on-large-only nav-icon">
+         <span></span>
+         <span></span>
+         <span></span>
+      </label>
+      <sv-side-nav class="side-nav flex flex-column flex-center flex-middle flex-wrap black mobile-nav"></sv-side-nav>
+      <figure id="logo" class="text-hide h1 pull-left" itemscope itemtype="http://schema.org/Organization">
+         <a class="acent-font" href="#/" rel="nofollow">SouVoluntário</a>
+      </figure>
+
+      <!-- nav -->
+      <ul class="menu hide-on-med-and-down">
+         <li class="nav-item"><a href="#/home">Home</a></li>
+         <li class="nav-item"><a href="#/sobre">Sobre nós</a></li>
+         <li class="nav-item">
+            <a>Voluntários</a>
+            <ul class="sub-list">
+               <li ng-if="!isAuthenticated" class="sub-item"><a class="center-text" href="#/cadastro/voluntario">Cadastro</a></li>
+               <li class="sub-item"><a class="center-text" href="#/oportunidades">Oportunidades</a></li>
+            </ul>
+         </li>
+         <li class="nav-item">
+            <a href="">Organizações</a>
+            <ul class="sub-list">
+               <li class="sub-item"><a class="center-text" href="#/organizacoes">Organizações registradas</a></li>
+               <li ng-if="!isAuthenticated" class="sub-item"><a class="center-text" href="#/cadastro/organizacao">Cadastro</a></li>
+            </ul>
+         </li>
+         <li class="nav-item">
+            <a ng-if="!isAuthenticated" class="flex flex-middle" href="/painel/"><i class="material-icons">lock_outline</i>acesso</a>
+            <a ng-if="isAuthenticated" class="flex flex-middle" href="/painel/"><i class="material-icons">person</i></a>
+         </li>
+      </ul>
+   </div>
+</nav>

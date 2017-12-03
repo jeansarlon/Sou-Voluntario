@@ -1,0 +1,32 @@
+<div class="panel-container">
+   <sv-featuredbar data="panel.viewInfo"></sv-featuredbar>
+   <div class="container">
+      <div class="wrapper">
+         <div class="row">
+            <div class="col s12">
+               <ul class="collection" ng-if="panel.volunteers.length">
+                  <li ng-repeat="v in panel.volunteers track by $index" class=" collection-item avatar">
+                     <article>        
+                        <img ng-src="{{panel.public}}/{{v.photo}}" alt="" class="circle">
+                        <span class="title"><b>{{v.name}}<b></span>
+                           <p>{{v.email}}<br> 
+                        <p>{{v.address.city}} - {{v.address.state}}<br> 
+                        </p>
+                        <div href="#!" class="secondary-content">
+                           <a href="painel/#/voluntarios/{{v._id}}" class=""><i class="material-icons">send</i></a>
+                        </div>
+                     </article>
+                  </li>
+               </ul>
+               <ul class="collection" ng-if="!panel.volunteers.length">
+                  <li class=" collection-item">
+                     <article class="flex flex-center flex-middle">
+                        <p>Ainda <b>Não</b> há voluntários nesta Oportunidade</p>
+                     </article>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

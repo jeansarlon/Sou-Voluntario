@@ -1,0 +1,25 @@
+.gesture {
+   .caption {
+      margin-bottom: 40px;
+      h1 {
+         padding: 20px 0 0;
+         font-size: 2rem;
+         
+         @media all and (min-width: 601px){
+            font-size: 3rem;
+            text-align: left;
+            padding: 0;
+         }
+      }
+      p {
+         font-size: 1.7rem;
+         @media all and (min-width: 601px){
+            width: 80%;
+         }
+         
+         @media all and (min-width: 960px){
+            width: 50%;
+         }
+      }
+   }
+}

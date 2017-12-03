@@ -1,0 +1,105 @@
+<div class="panel-container">
+   <sv-panel-nav user="panel.user"></sv-panel-nav>
+   <sv-featuredbar data="panel.viewInfo"></sv-featuredbar>
+   <div class="container">
+      <div class="wrapper">
+         <div class="row">
+            <div class="col s12">
+               <div class="card alt">
+                  <div class="card-content">
+                     <div class="flex flex-middle flex-column">
+                        <div class="title">
+                           <input id="title" type="text" class="card-title no-material" ng-model="panel.opportunity.title">
+                        </div>
+                     </div>
+                     <div class="flex flex-middle flex-space-between">
+                        <div class="flex">
+                           De: <input id="startperiod" type="date" class="text-center no-material" ng-model="panel.opportunity.period.startDate">
+                        </div>
+                        <div class="flex">
+                           Até: <input id="endperiod" type="date" class="text-center no-material" ng-model="panel.opportunity.period.endDate">
+                        </div>
+                     </div>
+                     <div class="description">
+                        <textarea name="description" id="textarea" class="text-center materialize-textarea" ng-if="panel.isEdit" ng-model="panel.opportunity.description"></textarea>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="">
+                  <div class="card">
+                     <div class="card-content" sv-form>
+                        <div class="card-title">Local:</div>
+                        <ul class="collection adress-list">
+                           <li class="flex flex-space-between collection-item">
+                              <p>CEP:</p>
+                              <p>
+                                 <input id="CEP" type="text" class="text-right no-material" ng-model="panel.opportunity.address.CEP">
+                              </p>
+                           </li>
+                           
+                           <li class="flex flex-space-between collection-item">
+                              <p>Estado:</p> 
+                              <p>
+                                 <select class="text-right no-material" ng-model="panel.opportunity.address.state">
+                                    <option value="" disabled>Estado</option>
+                                    <option value="RS">RS</option>
+                                 </select>
+                              </p>
+                           </li>
+                           
+                           <li class="flex flex-space-between collection-item">
+                              <p>Cidade:</p>
+                              <p>
+                                 <select class="text-right no-material" ng-model="panel.opportunity.address.city">
+                                    <option value="" disabled>Cidade</option>
+                                    <option value="Charqueadas">Charqueadas</option>
+                                    <option value="Porto Alegre">Porto Alegre</option>
+                                    <option value="Canoas">Canoas</option>
+                                    <option value="Sapucaia">Sapucaia</option>
+                                 </select>
+                              </p>
+                           </li>
+                        
+                           <li class="flex flex-space-between collection-item">
+                              <p>Rua:</p> 
+                              <p>
+                                 <input id="street" type="text" class="text-right no-material" ng-model="panel.opportunity.address.street">
+                              </p>
+                           </li>
+                           <li class="flex flex-space-between collection-item">
+                              <p>Nº:</p> 
+                              <p>
+                                 <input id="number" type="text" class="text-right no-material" ng-model="panel.opportunity.address.number">
+                              </p>
+                           </li>
+                           <li class="flex flex-space-between collection-item">
+                              <p>Complemento:</p>
+                              <p>
+                                 <input id="complement" type="text" class="text-right no-material" ng-model="panel.opportunity.address.complement">
+                              </p>
+                           </li>
+                           <li class="flex flex-space-between collection-item">
+                              <p>Vila:</p>
+                              <p>
+                                 <input id="district" type="text" class="text-right no-material" ng-model="panel.opportunity.address.district">
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="card">
+                  <div class="card-content">
+                     <div class="card-title">Tags</div>
+                     <div class="flex flex-middle">
+                        <sv-tag class="chips" tags="panel.opportunity.keyWord"></sv-tag>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

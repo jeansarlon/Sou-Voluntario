@@ -1,0 +1,66 @@
+------------------------OPPORTUNITY:
+
+Title: Associate Voluntary and Opportunity.
+Route: '/opportunity/:_id/volunteers'
+Verb Http: POST
+Body: Object Voluntary
+
+
+Title: Remove association between voluntary and opportunity.
+Route: '/opportunity/:_id/volunteers/:id_voluntary'
+Verb Http: DELETE
+
+
+Title: Create a opportunity.
+Route: '/opportunity'
+Verb Http: POST
+
+
+Title: Update a opportunity.
+Route: '/opportunity/:_id'
+Verb Http: UPDATE
+
+
+Title: Delete a opportunity.
+Route: '/opportunity/:_id'
+Verb Http: DELETE
+
+
+Title: Insert evaluation in opportunity.
+Route: '/opportunity/:_id/evaluations'
+Verb Http: POST
+
+
+
+Title: Get all opportunities from the parameter page, limited by 10.
+Route: '/opportunity/page/:page'
+Verb Http: GET
+
+
+
+Title: Get a opportunity by _id.
+Route: '/opportunity/:_id'
+Verb Http: GET
+
+
+Title: Seach opportunities by title, description, and key Words.
+Route: '/search'
+Verb Http: GET
+Example:  '/search?arg=words'
+
+
+------------------------VOLUNTARY:
+
+Title: List all the opportunities of a voluntary.
+Route: '/voluntary/:_id/opportunities'
+Verb Http: GET
+
+
+
+------------------------ORGANIZATION:
+
+Title: List all the opportunities of a organization.
+Route: '/organization/:_id/opportunities'
+Verb Http: GET
+
+

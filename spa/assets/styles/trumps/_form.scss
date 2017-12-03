@@ -1,0 +1,20 @@
+input,
+textarea {
+   &.no-material {
+      border: 0 !important;
+      border-bottom: 0 !important;
+      height: inherit !important;
+      font-size: 1rem !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      transition: all none !important;
+   }
+}
+.no-material {
+   input[type=text] {
+      margin: 0;
+      line-height:unset;
+      height: auto;
+      border-bottom: 0;
+   }
+}

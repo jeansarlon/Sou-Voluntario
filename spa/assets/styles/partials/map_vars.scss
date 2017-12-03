@@ -1,0 +1,29 @@
+$slider: (
+   "base": $primary-color
+);
+$section: (
+   "titleColor": $primary-color
+);
+$page-header: (
+   "height": 31.25rem
+);
+
+$components: (
+   "slider": $slider,
+   "section": $section,
+   "page-header":$page-header,
+);
+
+
+
+@function component($item, $type) {
+   @if map-has-key($components, $item){
+      $curr_item: map-get($components, $item);
+      @if map-has-key($curr_item, $type) {
+         @return map-get($curr_item, $type);
+      }
+   }
+
+   @warn "Unknown `#{name}` in $components.";
+   @return null;
+}

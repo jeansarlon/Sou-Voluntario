@@ -1,0 +1,12 @@
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+   <div class="modal-content">
+      <h4>{{modal.header}}</h4>
+      <p ng-bind-html="modal.body"></p>
+   </div>
+   <div class="modal-footer">
+      <a href="" ng-if="modal.footer.ok.action" class="modal-action modal-close">Não</a>
+      <a href="" ng-click="modal.footer.ok.action ? modal.footer.ok.action():''" ng-class="{'modal-close' : !modal.footer.ok.action}" class="modal-action">{{modal.footer.ok.text || 'Ok'}}</a>
+    </div>
+</div>

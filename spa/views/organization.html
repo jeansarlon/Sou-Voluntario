@@ -1,0 +1,60 @@
+<sv-header name="org.viewInfo"></sv-header>
+<div class=" organization-page">
+   <div class="container">
+      
+      <ul class="card collection organization-info">
+         
+         <li class="collection-item main flex flex-wrap flex-center  flex-middle flex-column">
+            <img class="organization-logo" ng-src="{{org.public}}/{{org.organization.photo}}" alt="">
+            <p>{{org.organization.mission}}</p>
+         </li>
+         <li class="collection-item flex flex-space-between">
+            <span class="title">Site</span>
+            <p>{{org.organization.site}}</p>
+         </li>
+         <li class="collection-item flex flex-space-between">
+            <span class="title">Email</span>
+            <p>{{org.organization.email}}</p>
+         </li>
+         <li ng-if="org.organization.CNPJ" class="collection-item flex flex-space-between">
+            <span class="title">CNPJ</span>
+            <p>{{org.organization.CNPJ}}</p>
+         </li>
+         
+         <li ng-if="org.organization.CNPJ" class="collection-item flex flex-center">
+            <span class="title acent-font">Endereço:</span>
+         </li>
+         
+         <li class="collection-item flex flex-space-between">
+            <span class="title">Rua:</span>
+            <p>{{org.organization.address.street}}</p>
+         </li>
+         <li class="collection-item flex flex-space-between">
+            <span class="title">Número:</span>
+            <p>{{org.organization.address.number}}</p>
+         </li>
+         <li class="collection-item flex flex-space-between">
+            <span class="title">Bairro:</span>
+            <p>{{org.organization.address.district}}</p>
+         </li>
+         <li class="collection-item flex flex-space-between">
+            <span class="title">Cidade:</span>
+            <p>{{org.organization.address.city}} - {{org.organization.address.state}}</p>
+         </li>
+         
+         
+         <li ng-if="org.organization.CNPJ" class="collection-item flex flex-center">
+            <span class="title acent-font">Contato:</span>
+         </li>
+         
+         <li class="collection-item flex flex-space-between">
+            <span class="title">Telefone:</span>
+            <p>{{org.organization.contact.phone}}</p>
+         </li>
+         <li class="collection-item flex flex-space-between">
+            <span class="title">Celular:</span>
+            <p>{{org.organization.contact.cellPhone}}</p>
+         </li>
+      </ul>
+   </div>
+</div>

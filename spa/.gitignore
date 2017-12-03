@@ -1,0 +1,7 @@
+node_modules
+sftp-config.json
+_build
+npm-debug.log
+.idea
+assets/styles/style.css
+assets/styles/style.min.css

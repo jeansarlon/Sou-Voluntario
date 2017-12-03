@@ -1,0 +1,73 @@
+.data-list {
+   border-top: 1px solid #ddd;
+   border-right: 1px solid #ddd;
+   border-left: 1px solid #ddd;
+   margin: 0.5rem 0 1rem 0;
+   > .item{
+      > .content {
+         padding: 10px 20px;
+         display: flex;
+         cursor: pointer;
+         -webkit-tap-highlight-color: transparent;
+         line-height: 1.5;
+         background-color: #fff;
+         border-bottom: 1px solid #ddd;
+         
+         a{
+            margin-left: 20px;
+         }
+         
+         .data {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transition: opacity 1s ease;
+         }
+         
+         .edit {
+            display: flex;
+            height: 0;
+            opacity: 0;
+            width: 0;
+            visibility: hidden;
+            transition: opacity 1s ease;
+            overflow: hidden;
+            
+            input{
+               flex: 1;
+               border: none;
+               outline: inherit;
+               height: auto;
+               line-height: normal;
+               margin: 0;
+               background-color: transparent;
+            }
+            .select-wrapper {
+               display: flex;
+               align-items: center;
+               width: 100%;
+            }
+         }
+         
+         &:hover {
+            background-color: #ddd;
+         }
+      }
+      &.active{
+         .edit {
+            height: auto;
+            width: 100%;
+            opacity: 1;
+            visibility: visible;
+            overflow: visible;
+         }
+         .data {
+            height: 0;
+            width: 0;
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+         }
+      }
+   }
+}

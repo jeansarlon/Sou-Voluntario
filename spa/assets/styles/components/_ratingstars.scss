@@ -1,0 +1,34 @@
+.jk-rating-stars-container .button {
+   cursor: pointer;
+}
+
+.jk-rating-stars-container {
+   display: flex;
+   justify-content: center;
+   
+   .button {
+      cursor: pointer;
+      &:first-of-type {
+         display: none;
+      }
+      .material-icons {
+         font-size: 40px;
+      }
+   }
+
+   .star-button {
+      text-shadow: 0.06em 0.04em #000000;
+
+      &.star-on .material-icons {
+         color: $primary-color;
+      }
+
+      &.star-off .material-icons {
+         color: #ddd;
+      }
+   }
+
+   &[read-only="true"] .button {
+      cursor: default;
+   }
+}

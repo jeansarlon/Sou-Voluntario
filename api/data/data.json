@@ -1,0 +1,635 @@
+use DBSouVoluntario
+
+db.Organizations.insert([
+    {
+        "_id" : ObjectId("59e62f5e165969e56ca726a6"),
+        "name" : "PREA",
+        "email" : "prea@email.com",
+        "password" : "123",
+        "mission" : "Oferecer cursos em diversas áreas, com atenção especial em preparatórios para vestibulares, com professores voluntários.",
+        "CNPJ" : "001",
+        "createdAt": new Date(),
+        "responsible":"Moisés",
+        "photo" : "image-1508243540722.jpeg",
+        "type" : 0,
+        "contact" : {
+            "cellPhone" : "22334455",
+            "phone" : "88776655"
+        },
+        "address" : {
+            "city" : "Porto Alegre",
+            "state" : "RS",
+            "street" : "RA 1",
+            "number" : "4738",
+            "district" : "Jundiaí",
+            "complement" : "Parada 5",
+            "CEP" : "001"
+        }
+    },
+
+    {
+        "_id" : ObjectId("59e62f5e165969e56ca726a7"),
+        "name" : "ASSOALFRA",
+        "email" : "assoalfra@email.com",
+        "password" : "123",
+        "mission" : "Somos uma Associação que existe com o objetivo de criar condições e recursos para o desenvolvimento de um contexto educativo em parceria com as famílias, que se caracterize por um ambiente acolhedor e dinamizador de aprendizagens e competências, onde a criança possa crescer e evoluir de forma global, adequada e harmoniosa.",
+        "CNPJ" : "002",
+        "createdAt": new Date(),
+        "responsible":"João",
+        "photo" : "image-1508243852572.png",
+        "type" : 0,
+        "contact" : {
+            "cellPhone" : "2243344553",
+            "phone" : "8877623455"
+        },
+        "site": "www.assoalfra.pt",
+        "address" : {
+            "city" : "Porto Alegre",
+            "state" : "RS",
+            "street" : "RA 2",
+            "number" : "45638",
+            "district" : "Villas boas",
+            "complement" : "Parada 1",
+            "CEP" : "002"
+        }
+    },
+
+    {
+        "_id" : ObjectId("59e62f5e165969e56ca726a8"),
+        "name" : "CDA",
+        "email" : "cda@email.com",
+        "password" : "123",
+        "mission" : "Arrecadar doações de agasalhos a fim de distribuí-los à quem precisar.",
+        "CNPJ" : "003",
+        "createdAt": new Date(),
+        "responsible":"Prefeitura de Porto Alegre",
+        "photo" : "image-1508245991823.jpeg",
+        "type" : 0,
+        "contact" : {
+            "cellPhone" : "33225566",
+            "phone" : "99884466"
+        },
+        "address" : {
+            "city" : "Porto Alegre",
+            "state" : "RS",
+            "street" : "RA 6",
+            "number" : "456",
+            "district" : "Centro",
+            "complement" : "Centro histórico PA",
+            "CEP" : "003"
+        }
+    }
+])
+
+
+
+
+
+
+
+db.Volunteers.insert([
+    {
+        "_id" : ObjectId("59e61f8d165969e56ca726a1"),
+        "name" : "Carlos André",
+        "email" : "carlos.asrc@gmail.com",
+        "CPF":"701545",
+        "gender" : "Masculino",
+        "password" : "123",
+        "createdAt": new Date(),
+        "occupationArea" : "TI",
+        "profession" : "Desenvolvedor de software",
+        "company" : "Nenhuma",
+        "photo" : "image-1508247820999.jpeg",
+        "type" : 1,
+        "availability" : "Ocasional",
+        "contact" : {
+            "cellPhone" : "981641713",
+            "phone" : "33665544"
+        },
+        "address" : {
+            "city" : "Porto Alegre",
+            "state" : "RS",
+            "street" : "João de Oliveira Remião",
+            "number" : "5200",
+            "district" : "Pinheiro",
+            "complement" : "Parada 12",
+            "CEP" : "123"
+        }
+    },
+
+    {
+        "_id" : ObjectId("59e61f8d165969e56ca726a2"),
+        "name" : "Jean Sarlon",
+        "email" : "jean@email.com",
+        "gender" : "Masculino",
+        "password" : "123",
+        "CPF":"704675",
+        "createdAt": new Date(),
+        "occupationArea" : "TI",
+        "profession" : "Desenvolvedor Full Stack",
+        "company" : "Alguma Empresa",
+        "photo" : "image-1508251706882.jpeg",
+        "type" : 1,
+        "availability" : "Ocasional",
+        "contact" : {
+            "cellPhone" : "99887766",
+            "phone" : "33334567"
+        },
+        "address" : {
+            "city" : "Charqueadas",
+            "state" : "RS",
+            "street" : "RA 4",
+            "number" : "65",
+            "district" : "Alguma vila",
+            "complement" : "Quadra 13",
+            "CEP" : "234234"
+        }
+    },
+
+    {
+        "_id" : ObjectId("59e61f8d165969e56ca726a3"),
+        "name" : "Margaret Hamilton",
+        "email" : "margaret@email.com",
+        "gender" : "Feminino",
+        "CPF":"8836214",
+        "createdAt": new Date(),
+        "password" : "123",
+        "occupationArea" : "Tecnologia",
+        "profession" : "Cientista da computação, engenheira de software, empresária",
+        "company" : "MIT",
+        "photo" : "image-1508252943378.jpeg",
+        "type" : 1,
+        "availability" : "Ocasional",
+        "contact" : {
+            "cellPhone" : "3453536",
+            "phone" : "4543778"
+        },
+        "address" : {
+            "city" : "Porto Alegre",
+            "state" : "RS",
+            "street" : "RA Marte",
+            "number" : "566",
+            "district" : "Centro",
+            "complement" : "quadra 43",
+            "CEP" : "53456"
+        }
+    },
+
+    {
+        "_id" : ObjectId("59e61f8d165969e56ca726a4"),
+        "name" : "Arnold Schwarzenegger",
+        "email" : "arnold@email.com",
+        "gender" : "Masculino",
+        "password" : "123",
+        "createdAt": new Date(),
+        "CPF":"433425",
+        "occupationArea" : "Cinema",
+        "profession" : "Ator",
+        "company" : "Empresas de cinema",
+        "photo" : "image-1508252049385.jpeg",
+        "type" : 1,
+        "availability" : "Ocasional",
+        "contact" : {
+            "cellPhone" : "2342346",
+            "phone" : "3436535656"
+        },
+        "address" : {
+            "city" : "Porto Alegre",
+            "state" : "RS",
+            "street" : "RA 8",
+            "number" : "23",
+            "district" : "Centro",
+            "complement" : "Parada 100",
+            "CEP" : "234234"
+        }
+    },
+
+    {
+        "_id" : ObjectId("59e61f8d165969e56ca726a5"),
+        "name" : "Bill Gates",
+        "email" : "bill@email.com",
+        "gender" : "Masculino",
+        "createdAt": new Date(),
+        "password" : "123",
+        "CPF":"827474",
+        "occupationArea" : "Tecnologia",
+        "profession" : "Empresário",
+        "company" : "Microsoft",
+        "photo" : "image-1508252304801.jpeg",
+        "type" : 1,
+        "availability" : "Ocasional",
+        "contact" : {
+            "cellPhone" : "345345",
+            "phone" : "56564"
+        },
+        "address" : {
+            "city" : "Porto Alegre",
+            "state" : "RS",
+            "street" : "Silício",
+            "number" : "56",
+            "district" : "Tecnopuc",
+            "complement" : "Parada 3",
+            "CEP" : "56456"
+        }
+    }
+])
+
+
+
+
+
+
+db.Opportunities.insert([
+    {
+        "_id" : ObjectId("59e63e25165969e56ca726b1"),
+        "title" : "Professor de física",
+        "description" : "Irá ministrar aulas de física à pré vestibulandos do PrEA.",
+        "responsible" : ObjectId("59e62f5e165969e56ca726a6"),
+        "photo" : "image-1508258558814.jpeg",
+        "createdAt": new Date(),
+        "evaluations" : [],
+        "volunteers" : [],
+        "keyWord" : [ 
+            "Professor", 
+            "Ensino", 
+            "Vestibular", 
+            "Física"
+        ],
+        "address" : {
+            "state" : "RS",
+            "city" : "Porto Alegre",
+            "CEP" : "1234",
+            "street" : "RA 37",
+            "number" : "23",
+            "district" : "Centro",
+            "complement" : "Segundo andar"
+        },
+        "period" : {
+            "startDate" : new ISODate('2018-03-05 03:00:00'),
+            "endDate" : new ISODate('2018-07-30 03:00:00')
+        }
+    },
+
+    {
+        "_id" : ObjectId("59e63f999ce2f32090e42118"),
+        "title" : "Oficina de programação",
+        "description" : "Precisamos de pessoas dispostas a ensinar programação!",
+        "responsible" : ObjectId("59e62f5e165969e56ca726a6"),
+        "photo" : "image-1508261785678.jpeg",
+        "createdAt": new Date(),
+        "evaluations" : [
+            {
+                "comment": "Love it!",
+                "stars": 5,
+                "createdAt": new Date(),
+                "voluntary": ObjectId("59e61f8d165969e56ca726a3")
+            }
+        ],
+        "volunteers" : [
+            ObjectId("59e61f8d165969e56ca726a3")
+        ],
+        "keyWord" : [ 
+            "programação", 
+            "Tecnologia", 
+            "Oficina", 
+            "fim de semana"
+        ],
+        "address" : {
+            "CEP" : "75071-440",
+            "state" : "RS",
+            "city" : "Porto Alegre",
+            "street" : "omega",
+            "number" : "43",
+            "district" : "Beta",
+            "complement" : "qd 76"
+        },
+        "period" : {
+            "startDate" : new ISODate("2017-11-04T02:00:00.000Z"),
+            "endDate" : new ISODate("2017-11-05T02:00:00.000Z")
+        }
+    },
+
+    {
+        "_id" : ObjectId("59e74be6937eea1cf0d44e03"),
+        "title" : "Doação de agasalhos",
+        "description" : "Tem por objetivo auxiliar pessoas em situação de vulnerabilidade social com roupas para enfrentarem o rigoroso inverno gaúcho.",
+        "responsible" : ObjectId("59e62f5e165969e56ca726a8"),
+        "photo" : "image-1508330469652.jpeg",
+        "evaluations" : [],
+        "createdAt": new Date(),
+        "volunteers" : [],
+        "keyWord" : [ 
+            "Saúde", 
+            "Crianças", 
+            "Idosos", 
+            "frio", 
+            "agasalho", 
+            "doação", 
+            "inverno"
+        ],
+        "address" : {
+            "street" : "Avenida Borges de Medeiros",
+            "number" : "1501",
+            "complement" : "Centro Administrativo do Estado",
+            "district" : "Centro",
+            "state" : "RS",
+            "city" : "Porto Alegre",
+            "CEP" : "25435"
+        },
+        "period" : {
+            "startDate" : new ISODate("2017-06-01T03:00:00.000Z"),
+            "endDate" : new ISODate("2017-08-31T03:00:00.000Z")
+        }
+    },
+
+    {
+        "_id" : ObjectId("59e75ab9937eea1cf0d44e04"),
+        "title" : "Doação de livros",
+        "description" : "Procura-se livros jogados em estantes, compartilhe seu conhecimento!",
+        "responsible" : ObjectId("59e62f5e165969e56ca726a7"),
+        "photo" : "image-1508334265185.jpeg",
+        "evaluations" : [],
+        "createdAt": new Date(),
+        "volunteers" : [],
+        "keyWord" : [ 
+            "livros", 
+            "doação", 
+            "conhecimento", 
+            "educação"
+        ],
+        "address" : {
+            "CEP" : "234234",
+            "state" : "RS",
+            "city" : "Porto Alegre",
+            "street" : "ra7",
+            "number" : "67",
+            "district" : "Centro",
+            "complement" : "2º andar"
+        },
+        "period" : {
+            "startDate" : new ISODate("2017-10-20T02:00:00.000Z"),
+            "endDate" : new ISODate("2017-10-31T02:00:00.000Z")
+        },
+    },
+
+    {
+        "_id" : ObjectId("59e76440937eea1cf0d44e05"),
+        "title" : "Adoção de animais",
+        "description" : "Quem estiver disposto a cuidar e dar carinho, temos muitas oportunidades aqui! Adote um cão! :D",
+        "responsible" : ObjectId("59e62f5e165969e56ca726a7"),
+        "photo" : "image-1508336704301.jpeg",
+        "evaluations" : [],
+        "createdAt": new Date(),
+        "volunteers" : [],
+        "keyWord" : [ 
+            "Animais", 
+            "adoção", 
+            "cachorros", 
+            "cão"
+        ],
+        "address" : {
+            "CEP" : "453245",
+            "state" : "RS",
+            "city" : "Porto Alegre",
+            "street" : "ra67",
+            "number" : "34",
+            "district" : "Lobos",
+            "complement" : "Quadra 15"
+        },
+        "period" : {
+            "startDate" : new ISODate("2017-10-01T03:00:00.000Z"),
+            "endDate" : new ISODate("2017-12-31T02:00:00.000Z")
+        }
+    },
+
+    {
+        "_id" : ObjectId("59e77177937eea1cf0d44e06"),
+        "title" : "Doação de Alimentos",
+        "description" : "Estamos recolhendo alimentos para distribuição à quem precisa! Participe!",
+        "responsible" : ObjectId("59e62f5e165969e56ca726a7"),
+        "photo" : "image-1508340087260.jpeg",
+        "evaluations" : [
+            {
+                "comment": "Sou voluntário!!",
+                "stars": 5,
+                "createdAt": new Date(),
+                "voluntary": ObjectId("59e61f8d165969e56ca726a1")
+            }
+        ],
+        "createdAt": new Date(),
+        "volunteers" : [
+            ObjectId("59e61f8d165969e56ca726a1"),
+            ObjectId("59e61f8d165969e56ca726a2")
+        ],
+        "keyWord" : [ 
+            "Saúde", 
+            "Crianças", 
+            "Idosos", 
+            "alimentos", 
+            "doação"
+        ],
+        "address" : {
+            "CEP" : "453245",
+            "state" : "RS",
+            "city" : "Porto Alegre",
+            "street" : "ra67",
+            "number" : "34",
+            "district" : "Lobos",
+            "complement" : "Quadra 15"
+        },
+        "period" : {
+            "startDate" : ISODate("2017-11-30T02:00:00.000Z"),
+            "endDate" : ISODate("2017-12-31T02:00:00.000Z")
+        }
+    },
+
+
+    {
+        "_id" : ObjectId("59e8e126f3e5060ba883005d"),
+        "title" : "Médico",
+        "description" : "Equipe de médicos para montar equipe de atendimento em áreas remotas. Interessados em participar, compareçam no local indicado quanto antes para o planejamento da missão :)",
+        "responsible" : ObjectId("59e62f5e165969e56ca726a7"),
+        "photo" : "image-1508434214402.jpeg",
+        "evaluations" : [],
+        "createdAt": new Date(),
+        "volunteers" : [],
+        "keyWord" : [ 
+            "Saúde", 
+            "Crianças", 
+            "Idosos", 
+            "Médico", 
+            "atendimento ", 
+            "area remota"
+        ],
+        "address" : {
+            "CEP" : "342",
+            "state" : "RS",
+            "city" : "Porto Alegre",
+            "street" : "Ra.37",
+            "number" : "34",
+            "district" : "Centro",
+            "complement" : "Prédio 2.B"
+        },
+        "period" : {
+            "startDate" : new ISODate("2017-10-20T02:00:00.000Z"),
+            "endDate" : new ISODate("2017-10-30T02:00:00.000Z")
+        },
+    },
+
+    {
+        "_id" : ObjectId("59e8ef58f3e5060ba883005e"),
+        "description" : "Todas as pessoas maiores de 21 anos, com disponibilidade de tempo e bom equilíbrio emocional, podem fazer parte do Programa Santa Casa Voluntários.",
+        "title" : "Santa Casa Voluntários",
+        "responsible" : ObjectId("59e62f5e165969e56ca726a7"),
+        "photo" : "image-1508437848658.jpeg",
+        "evaluations" : [],
+        "createdAt": new Date(),
+        "volunteers" : [],
+        "keyWord" : [ 
+            "Saúde", 
+            "Crianças", 
+            "Idosos", 
+            "hospital", 
+            "visita"
+        ],
+        "address" : {
+            "CEP" : "3467",
+            "state" : "RS",
+            "city" : "Porto Alegre",
+            "street" : "ra56",
+            "number" : "76",
+            "district" : "Centro",
+            "complement" : "prédio Zulu"
+        },
+        "period" : {
+            "startDate" : new ISODate("2017-10-20T02:00:00.000Z"),
+            "endDate" : new ISODate("2017-10-31T02:00:00.000Z")
+        }
+    },
+
+        {
+        "_id" : ObjectId("59e971483d71ba1d004a5998"),
+        "title" : "Monitores em cursinho",
+        "description" : "Qualquer pessoa com alto conhecimento em alguma disciplina do ensino regular e que deseja repassa-lo! Junte-se a nós!",
+        "responsible" : ObjectId("59e62f5e165969e56ca726a6"),
+        "photo" : "image-1508471112415.png",
+        "evaluations" : [],
+        "createdAt": new Date(),
+        "volunteers" : [
+            ObjectId("59e61f8d165969e56ca726a1"),
+            ObjectId("59e61f8d165969e56ca726a2")
+        ],
+        "keyWord" : [ 
+            "educação", 
+            "monitoria", 
+            "vestibular", 
+            "ensino"
+        ],
+        "address" : {
+            "CEP" : "4324",
+            "state" : "RS",
+            "city" : "Porto Alegre",
+            "street" : "ra.76",
+            "number" : "43",
+            "district" : "Centro",
+            "complement" : "quadra 3"
+        },
+        "period" : {
+            "startDate" : new ISODate("2018-02-01T02:00:00.000Z"),
+            "endDate" : new ISODate("2018-06-30T03:00:00.000Z")
+        }
+    },
+
+    {
+        "_id" : ObjectId("59e975633d71ba1d004a5999"),
+        "title" : "Professor de música",
+        "description" : "Venha ensinar os fundamentos da música! Alunos predominantemente são crianças, alguns instrumentos no local. Participe!",
+        "responsible" : ObjectId("59e62f5e165969e56ca726a6"),
+        "photo" : "image-1508472163619.jpeg",
+        "evaluations" : [],
+        "createdAt": new Date(),
+        "volunteers" : [],
+        "keyWord" : [ 
+            "Crianças", 
+            "música", 
+            "instrumentos", 
+            "professor"
+        ],
+        "address" : {
+            "CEP" : "4556",
+            "state" : "RS",
+            "city" : "Porto Alegre",
+            "street" : "João Oliveira",
+            "number" : "343",
+            "district" : "Recanto delta",
+            "complement" : "parada 5"
+        },
+        "period" : {
+            "startDate" : new ISODate("2017-10-21T02:00:00.000Z"),
+            "endDate" : new ISODate("2017-12-08T02:00:00.000Z")
+        }
+    },
+
+    {
+        "_id" : ObjectId("59e9794b3d71ba1d004a599a"),
+        "title" : "Psicólogo",
+        "description" : "Venha fazer parte de um grupo formado com o objetivo de atender pessoas em vulnerabilidade psicológica e social.",
+        "responsible" : ObjectId("59e62f5e165969e56ca726a7"),
+        "photo" : "image-1508473163932.jpeg",
+        "evaluations" : [],
+        "createdAt": new Date(),
+        "volunteers" : [],
+        "keyWord" : [ 
+            "Saúde", 
+            "atendimento", 
+            "psicologia", 
+            "assistência social"
+        ],
+        "address" : {
+            "CEP" : "7789",
+            "state" : "RS",
+            "city" : "Porto Alegre",
+            "street" : "Rua 98",
+            "number" : "43",
+            "district" : "Centro",
+            "complement" : "3º Andar"
+        },
+        "period" : {
+            "startDate" : new ISODate("2017-10-21T02:00:00.000Z"),
+            "endDate" : new ISODate("2017-11-29T02:00:00.000Z")
+        }
+    },
+
+
+    {
+        "_id" : ObjectId("59e97feb72c9041f8cebebb0"),
+        "title" : "Ajuda a desabrigados",
+        "description" : "Após os fortes temporais dos últimos dias, muitas pessoas ficaram desabrigadas. Um força conjunta está sendo organizada no endereço informado, participe!",
+        "responsible" : ObjectId("59e62f5e165969e56ca726a8"),
+        "photo" : "image-1508474859325.png",
+        "evaluations" : [],
+        "createdAt": new Date(),
+        "volunteers" : [],
+        "keyWord" : [ 
+            "Saúde", 
+            "abrigo", 
+            "desabrigados"
+        ],
+        "address" : {
+            "CEP" : "656",
+            "state" : "RS",
+            "city" : "Porto Alegre",
+            "street" : "Rua 23",
+            "number" : "348",
+            "district" : "Centro",
+            "complement" : "Ginásio principal"
+        },
+        "period" : {
+            "startDate" : new ISODate("2017-10-21T02:00:00.000Z"),
+            "endDate" : new ISODate("2017-11-10T02:00:00.000Z")
+        }
+    }
+])
+
+
+

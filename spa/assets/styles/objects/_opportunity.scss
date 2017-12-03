@@ -1,0 +1,48 @@
+.opportunity-page {
+   background-color: rgba(222,222,222,.32);
+   padding-bottom: 0px;
+   
+   .opportunity-description {
+      position: relative;
+      width: 100%;
+      padding: 130px 20px;
+      
+      p{
+         position: relative;
+         z-index: 2;
+         color: #fff;
+         font-size: 1.3rem;
+         text-align: center;
+      }
+      
+      &::after {
+         position: absolute;
+         top: 0;
+         left: 0;
+         z-index: 1;
+         content: '';
+         display: block;
+         width: 100%;
+         height: 100%;
+         background: $primary-gradient;
+         opacity: .8;
+      }
+   }
+   .opportunity-info {
+      position: relative;
+      z-index: 2;
+      top: -90px;
+      animation-name: fade-in;
+      animation-duration: .5s;
+      font-size: 1.3rem;
+      
+   }
+   .btn {
+      height: 90px;
+      line-height: 90px;
+      width: 300px;
+      font-size: 1.4rem;
+      margin:0 auto 20px;
+      
+   }
+}

@@ -1,0 +1,83 @@
+<sv-modal></sv-modal>
+<sv-modal-eval formData="panel.evalForm" evaluate="panel.handlEvaluate()"></sv-modal-eval>
+<div class="panel-container">
+   <sv-featuredbar data="panel.viewInfo"></sv-featuredbar>
+   <div class="container">
+      <div class="wrapper">
+         <div class="row">
+            <div class="col s12">
+               <div class="card alt">
+                  <div class="card-content">
+                     <div class="flex flex-middle flex-column">
+                        <p class="card-title">{{panel.opportunity.title}}</p>
+                        <span>{{panel.opportunity.period.startDate | date:'dd/MM/yyyy'}} até: {{panel.opportunity.period.endDate | date:'dd/MM/yyyy'}}</span>
+                     </div>
+                     <div class="description">
+                        <p>{{panel.opportunity.description}}</p>
+                     </div>
+                     <div class="action-container container" ng-if="panel.user.type == 0">
+                        <ul class="flex flex-middle flex-center flex-space-around">
+                           <li class="">
+                              <a class="btn btn-flat btn-large flex flex-middle white-text flex-column flex-wrap flex-center" href="painel/#/oportunidades/{{panel.opportunity._id}}/voluntarios" title="Voluntários">
+                                 <i class="material-icons">people</i>
+                                 <strong>{{panel.opportunity.volunteers.length}}</strong>
+                              </a>
+                           </li>
+                           <li>
+                              <a class="btn btn-flat btn-large flex flex-middle white-text flex-column flex-wrap flex-center" href="painel/#/oportunidades/{{panel.opportunity._id}}/avaliacoes" title="Avaliações">
+                                 <i class="material-icons">rate_review</i>
+                                 <strong>{{panel.opportunity.evaluations.length}}</strong>
+                              </a>
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="">
+                  <div class="card">
+                     <div class="card-content">
+                        <div class="card-title">Local:</div>
+                        <ul class="collection adress-list">
+                           <li class="flex flex-space-between collection-item">
+                              <p>CEP:</p> <p>{{panel.opportunity.address.CEP}}</p>
+                           </li>
+                           
+                           <li class="flex flex-space-between collection-item">
+                              <p>Estado:</p> <p>{{panel.opportunity.address.state}}</p>
+                           </li>
+                           
+                           <li class="flex flex-space-between collection-item">
+                              <p>Cidade:</p> <p>{{panel.opportunity.address.city}}</p>
+                           </li>
+                        
+                           <li class="flex flex-space-between collection-item">
+                              <p>Rua:</p> <p>{{panel.opportunity.address.street}}</p>
+                           </li>
+                           <li class="flex flex-space-between collection-item">
+                              <p>Nº:</p> <p>{{panel.opportunity.address.number}}</p>
+                           </li>
+                           <li class="flex flex-space-between collection-item">
+                              <p>Complemento:</p> <p>{{panel.opportunity.address.complement}}</p>
+                           </li>
+                           <li class="flex flex-space-between collection-item">
+                              <p>Vila:</p> <p>{{panel.opportunity.address.district}}</p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="card">
+                  <div class="card-content">
+                     <div class="card-title">Tags</div>
+                     <div class="flex flex-middle">
+                        <p ng-repeat=" t in panel.opportunity.keyWord">- {{t}}, </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

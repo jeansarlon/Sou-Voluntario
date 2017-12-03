@@ -1,0 +1,165 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="pt-br" ng-csp="" ng-app="App" ng-style="accStyle">
+<!--<![endif]-->
+
+<head>
+
+   <base href="/">
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Sou Voluntário</title>
+   <meta name="description" content="A voluntary project to PUC S2B 2017/2">
+
+   <!-- mobile meta -->
+   <meta name="HandheldFriendly" content="True">
+   <meta name="MobileOptimized" content="320">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+   <link href="https://fonts.googleapis.com/css?family=Anton|Lato" rel="stylesheet">
+
+   <!--[if IE]>
+			<link rel="shortcut icon" href="favicon.ico">
+		<![endif]-->
+   <!-- or, set /favicon.ico for IE10 win -->
+   <meta name="msapplication-TileColor" content="#f01d4f">
+
+   <!-- CSS -->
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   <!-- build:css css/style.min.css -->
+   <link rel="stylesheet" href="node_modules/owl.carousel/dist/assets/owl.carousel.css" />
+   <!--Import Google Icon Font-->
+   <link rel="stylesheet" href="node_modules/owl.carousel/dist/assets/owl.theme.default.css" />
+   <link rel="stylesheet" type="text/css" href="assets/styles/style.css" />
+   
+   <!-- endbuild -->
+
+</head>
+
+<body class="main-wrapper">
+
+   <!--[if lt IE 8]>
+		    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+   <!-- Navigation -->
+   <sv-accessibility></sv-accessibility>
+   <sv-nav ng-if="hasNav && !isPanel"></sv-nav>
+   
+   
+   <!-- Main view for templates -->
+   <div ng-view="" class="fade" ng-class="{'panel': isPanel}"></div>
+   <footer class="app-footer flex flex-middle flex-center">
+      <span>© 2017 SouVoluntário. Feito com</span>
+      <img src="assets/images/heart2.svg" alt="">
+      <span>por <a href="https://www.facebook.com/jeansarlon" target="_blank"> Jean Sarlôn</a> e <a href="https://www.facebook.com/carlos.sousarodrigues.7" target="_blank">Carlos André</a></span>
+   </footer>
+   <sv-modal></sv-modal>
+</body>
+
+<!-- Vendors -->
+<!-- build:nonangularlibs js/nonangularlibs.js -->
+<script src="assets/js/nonangular/jquery-1.11.2.min.js"></script>
+<!-- endbuild -->
+
+<!-- Non-angular libraries -->
+<!-- build:libs js/libs.js -->
+<script src="assets/js/nonangular/lodash.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script src="assets/js/Materialize/vendor/velocity.min.js"></script>
+<script src="assets/js/Materialize/vendor/modernizr.js"></script>
+<script src="assets/js/Materialize/vendor/jquery.easing.1.4.js"></script>
+<script src="assets/js/Materialize/vendor/velocity.min.js"></script>
+<script src="assets/js/Materialize/components/animation.js"></script>
+<script src="assets/js/Materialize/components/base.js"></script>
+<script src="assets/js/Materialize/components/global.js"></script>
+<script src="assets/js/Materialize/components/forms.js"></script>
+<script src="assets/js/Materialize/components/cards.js"></script>
+<script src="assets/js/Materialize/components/dropdown.js"></script>
+<script src="assets/js/Materialize/components/toasts.js"></script>
+<script src="assets/js/Materialize/components/sideNav.js"></script>
+<script src="assets/js/Materialize/components/collapsible.js"></script>
+<script src="assets/js/Materialize/components/chips.js"></script>
+<script src="assets/js/Materialize/components/modal.js"></script>
+<script src="assets/js/Materialize/components/tooltip.js"></script>
+<script src="node_modules//owl.carousel/dist/owl.carousel.js"></script>
+<script src="assets/js/Materialize/vendor/hammer.min.js"></script>
+<script src="assets/js/Materialize/vendor/jquery.hammer.js"></script>
+<!-- endbuild -->
+
+<!-- Angular external libraries for application -->
+<!-- build:angularlibs js/angularlibs.js -->
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-route/angular-route.js"></script>
+<script src="node_modules/angular-crumble/crumble.js"></script>
+<script src="node_modules/angular-sanitize/angular-sanitize.js"></script>
+<script src="/node_modules/angular-aria/angular-aria.js"></script>
+<script src="/node_modules/angular-animate/angular-animate.js"></script>
+<script src="/node_modules/angular-messages/angular-messages.js"></script>
+<script src="/node_modules/angular-sanitize/angular-sanitize.js"></script>
+<script src="/node_modules/angular-i18n/angular-locale_pt-br.js"></script>
+<script src="/vendors/angular-rating-stars/dist/rating-stars.min.js"></script>
+<script src="/node_modules/angular-ui-mask/dist/mask.js"></script>
+
+<!-- endbuild -->
+
+<!-- Angular components -->
+<!-- build:appcomponents js/appcomponents.js -->
+<script src="app/app.js"></script>
+<script src="app/config.js"></script>
+<script src="components/services/LocalStorage.service.js"></script>
+<script src="components/services/Query.service.js"></script>
+<script src="components/services/Voluntary.service.js"></script>
+<script src="components/services/Organization.service.js"></script>
+<script src="components/services/Opportunity.service.js"></script>
+<script src="components/services/Auth.service.js"></script>
+<script src="components/services/Toast.service.js"></script>
+<script src="components/services/Tag.service.js"></script>
+<script src="components/services/Modal.service.js"></script>
+<script src="components/services/Validate.service.js"></script>
+
+<script src="components/directives/sv-header/sv-header.directive.js"></script>
+<script src="components/directives/sv-form/sv-form.directive.js"></script>
+<script src="components/directives/responsive.nav.directive.js"></script>
+<script src="components/directives/sv-toast/sv-toast.directive.js"></script>
+<script src="components/directives/owl.slider.directive.js"></script>
+<script src="components/directives/sv-nav/sv-nav.directive.js"></script>
+<script src="components/directives/sv-panel-nav/sv-panel-nav.directive.js"></script>
+<script src="components/directives/sv-side-nav/sv-side-nav.directive.js"></script>
+<script src="components/directives/sv-tag/sv-tag.directive.js"></script>
+<script src="components/directives/sv-modal/sv-modal.directive.js"></script>
+<script src="components/directives/sv-fileread/sv-fileread.directive.js"></script>
+<script src="components/directives/sv-input-file/sv-input-file.directive.js"></script>
+<script src="components/directives/sv-modal-eval/sv-modal-eval.directive.js"></script>
+<script src="components/directives/sv-tooltip/sv-tooltip.directive.js"></script>
+<script src="components/directives/sv-be-a-volunteer/sv-be-a-volunteer.directive.js"></script>
+<script src="components/directives/sv-home-opportunity/sv-home-opportunity.directive.js"></script>
+<script src="components/directives/sv-accessibility/sv-accessibility.directive.js"></script>
+<!-- endbuild -->
+
+<!-- Application sections -->
+<!-- build:mainapp js/mainapp.js -->
+<script src="app/factories/Address.factory.js"></script>
+<script src="app/factories/Contact.factory.js"></script>
+<script src="app/HomeController.js"></script>
+<script src="app/AboutController.js"></script>
+<script src="app/RegisterController.js"></script>
+<script src="app/AuthController.js"></script>
+<script src="app/OpportunitiesController.js"></script>
+<script src="app/OpportunityController.js"></script>
+<script src="app/OrganizationsController.js"></script>
+<script src="app/OrganizationController.js"></script>
+<script src="app/panel/Panel.controller.js"></script>
+<script src="app/panel/Opportunities.controller.js"></script>
+<script src="app/panel/Opportunity.controller.js"></script>
+<script src="app/AboutController.js"></script>
+
+<!-- endbuild -->
+
+<!-- templates from $templateCache -->
+<!-- build:templates -->
+<!-- endbuild -->
+</html>

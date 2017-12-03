@@ -1,0 +1,39 @@
+<sv-modal-eval formData="panel.evalForm" evaluate="panel.handlEvaluate()"></sv-modal-eval>
+<div class="panel-container">
+   <sv-panel-nav user="panel.user"></sv-panel-nav>
+   <sv-featuredbar data="panel.evaluations"></sv-featuredbar>
+   <div class="container">
+      <div class="wrapper">
+         <div class="row">
+               <div class="col s12">
+                  <div class="card">
+                     <div class="card-content">
+                        <ul class="evaluations" ng-if="panel.opportunity.evaluations">
+                           <li class="evaluations-item" ng-repeat="e in panel.opportunity.evaluations">
+                              <figure class="evaluation-image">
+                                 <img 
+                                 ng-src="{{e.voluntary.photo ? panel.public +'/'+ e.voluntary.photo : ''}}" 
+                                 alt="{{e.voluntary.name}}"/>
+                              </figure>
+                              <div class="content">
+                                 <p class="evaluation-title">{{e.voluntary.name}}</p>
+                                 <p class="evaluation-comment">{{e.comment}}</p>
+                                 <p class="evaluation-comment">
+                                    <jk-rating-stars
+                                    max-rating="5"
+                                    rating="e.stars"
+                                    read-only="true">
+                                    </jk-rating-stars>
+                                 </p>
+                              </div>
+                           </li>
+                        </ul>
+                        <p ng-if="panel.opportunity.evaluations.length == 0" class="center-text">Ainda não há avaliações!</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

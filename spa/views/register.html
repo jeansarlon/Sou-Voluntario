@@ -1,0 +1,155 @@
+<sv-header name="register.viewInfo"></sv-header>
+<section class="register main">
+   <div class="container">
+      <div class="row">
+         <sv-form>
+            <form sv-form name="registerForm" class="col s12 user-register" ng-submit="register.send(registerForm)" novalidate>
+               <div class="photo-upload">
+                  <sv-input-file class="inputfile" key="register.file" fm="register.formData.image"></sv-input-file>
+                  <label ng-class="{empty: !register.file}" class="flex flex-center flex-middle" for="file">
+                     <span>Selecione uma imagem</span>
+                     <img  ng-if="register.file" class="input-preview" ng-src="{{register.file}}">
+                  </label>
+               </div>
+               <div class="row">
+                  <div class="input-field col s12 m6">
+                     <input required id="name" name="name" ng-minlength="3" type="text" class="" ng-model="register.formData.name" validate>
+                     <label class="" for="name">{{register.isVoluntary? 'Nome completo' : 'Nome da organização'}}</label>
+                  </div>
+                  <div class="input-field col s12" ng-class="{m4:register.isVoluntary, m6:!register.isVoluntary}">
+                     <input required id="email" name="email" type="email" class="" ng-model="register.formData.email" validate>
+                     <label for="email">Email</label>
+                  </div>
+                  
+                  <div class="input-field col m2" ng-if="register.isVoluntary">
+                     <input ui-mask="999.999.999-99" ui-options="uiOption" required id="CPF" name="CPF" type="text" class="" ng-model="register.formData.CPF" validate>
+                     <label for="CPF">CPF</label>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="input-field col s12 m6">
+                     <input required id="password" name="password" type="password" class="validate" ng-model="register.formData.password" validate>
+                     <label for="password">Senha</label>
+                  </div>
+                  <div class="input-field col s12 m6">
+                     <input required id="rptPassword" name="rptPassword" type="password" ng-model="register.formData.rptPassword" class="" validate>
+                     <label for="rptPassword">Repetir senha</label>
+                  </div>
+               </div>
+
+               <div class="row" ng-if="!register.isVoluntary">
+                  <div class="input-field col s12">
+                     <input required id="mission" name="mission" type="text" class="validate" ng-model="register.formData.mission">
+                     <label for="mission">Missão</label>
+                  </div>
+               </div>
+
+               <div class="row" ng-if="!register.isVoluntary">
+                  <div class="input-field col s12 m6">
+                     <input ui-mask="999-999999999/99" ui-options="uiOption" required id="CNPJ" name="CNPJ" type="text" class="validate" ng-model="register.formData.CNPJ">
+                     <label for="CNPJ">CNPJ</label>
+                  </div>
+                  <div class="input-field col s12 m6">
+                     <input required id="responsible" name="responsible" type="text" class="validate" ng-model="register.formData.responsible">
+                     <label for="responsible">Responsável</label>
+                  </div>
+               </div>
+
+               <div class="row" ng-if="register.isVoluntary">
+                  <div class="input-field col s12 m5">
+                     <input required id="occupationArea" name="occupationArea" type="text" class="validate" ng-model="register.formData.occupationArea">
+                     <label for="occupationArea">Área de atuação</label>
+                  </div>
+                  <div class="input-field col m2">
+                     <select name="gender" required ng-model="register.formData.gender" validate>
+                        <option value="" disabled selected>Gênero</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                     </select>
+                  </div>
+                  <div class="input-field col s12 m5">
+                     <select name="availability" required ng-model="register.formData.availability" validate>
+                        <option value="" disabled selected>Disponibilidade</option>
+                        <option value="Ocasional">Ocasional</option>
+                        <option value="Regular">Regular</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="row" ng-if="register.isVoluntary">
+                  <div class="input-field col s12 m6">
+                     <input name="profession" required id="profession" type="text" class="" ng-model="register.formData.profession" validate>
+                     <label for="profession">Profissão</label>
+                  </div>
+                  <div class="input-field col s12 m6">
+                     <input name="company" required id="company" type="text" class="" ng-model="register.formData.company" validate>
+                     <label for="company">Empresa</label>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="input-field col s12 m4">
+                     <input ui-mask="99999-999" ui-options="uiOption" name="CEP" required id="CEP" type="text" class="" ng-model="register.address.CEP" validate>
+                     <label for="CEP">CEP</label>
+                  </div>
+                  
+                  <div class="input-field col s12 m4">
+                     <select required name="state" ng-model="register.address.state" validate>
+                        <option value="" disabled selected>Estado</option>
+                        <option value="RS">RS</option>
+                     </select>
+                  </div>
+                  
+                  <div class="input-field col s12 m4">
+                     <select name="city" required ng-model="register.address.city" validate>
+                        <option value="" disabled selected>Cidade</option>
+                        <option value="Charqueadas">Charqueadas</option>
+                        <option value="Porto Alegre">Porto Alegre</option>
+                        <option value="Canoas">Canoas</option>
+                        <option value="Sapucaia">Sapucaia</option>
+                     </select>
+                  </div>
+               </div>
+               
+               <div class="row">
+                  <div class="input-field col s12 m4">
+                     <input required id="street" name="street" type="text" class="" ng-model="register.address.street" validate>
+                     <label for="street">Rua</label>
+                  </div>
+                  <div class="input-field col s12 m1">
+                     <input name="number" required id="number" type="text" class="" ng-model="register.address.number" validate>
+                     <label for="number">Nº</label>
+                  </div>
+                  <div class="input-field col s12 m4">
+                     <input name="complement" required id="complement" type="text" class="" ng-model="register.address.complement" validate>
+                     <label for="complement">Complemento</label>
+                  </div>
+                  <div class="input-field col s12 m3">
+                     <input name="district" required id="district" type="text" class="" ng-model="register.address.district" validate>
+                     <label for="district">Vila</label>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="input-field col s12 m3">
+                     <input ui-mask="(99)9999-9999" ui-options="uiOption" name="telephone" required id="telephone" type="tel" class="" ng-model="register.contact.phone" validate>
+                     <label for="telephone">Telefone</label>
+                  </div>
+                  <div class="input-field col s12 m3">
+                     <input ui-mask="(99)99999-9999" ui-options="uiOption" required id="cellPhone" name="cellPhone" type="tel" class="" ng-model="register.contact.cellPhone" validate>
+                     <label for="cellPhone">Celular</label>
+                  </div>
+                  <div ng-if="!register.isVoluntary" class="input-field col s12 m6">
+                     <input required id="site" name="site" type="text" class="" ng-model="register.formData.site" validate>
+                     <label for="site">Site</label>
+                  </div>  
+               </div>
+               <div class="row">
+                  <div class="input-field col s12 m3">
+                     <button type="submit" class="btn btn-flat btn-large btn-flat" value="Cadastrar">Cadastar</button>
+                  </div>
+               </div>
+            </form>
+         </sv-form>
+      </div>
+   </div>
+</section>

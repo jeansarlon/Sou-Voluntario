@@ -1,0 +1,203 @@
+.main-nav {
+   position: absolute;
+   width: 100%;
+   background-color: transparent;
+   border: 0;
+
+   .menu {
+      .nav-item {
+         position: relative;
+
+         .sub-list {
+            position: absolute;
+            left: 0;
+            top: calc(100% - 20px);
+            min-width: 100%;
+            visibility: hidden;
+            opacity: 0;
+            background-color: #fff;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+
+            .sub-item {
+               width: 100%;
+               white-space: nowrap;
+
+               &:not(:last-of-type) {
+                  border-bottom: 1px solid rgba(0,0,0,.1);
+               }
+            }
+
+            a {
+               color: #000;
+            }
+         }
+
+         &:hover {
+            .sub-list {
+               visibility: visible;
+               opacity: 1;
+            }
+         }
+
+         &:last-of-type {
+            background-color: white;
+            margin-left: 30px;
+
+            a {
+               color: color("pink","accent-3");
+               height: 64px;
+            }
+         }
+         &:not(:last-of-type) {
+            > a {
+               text-shadow: 2px 2px #000;
+            }
+         }
+      }
+   }
+
+   #logo {
+      margin: 0;
+      a {
+         text-shadow: 2px 2px #a83567;
+         color: #fff;
+         font-size: 1.8rem;
+         
+      }
+      
+   }
+
+   ul li a {
+      color: #fff;
+      font-size: 1.1rem;
+   }
+
+   .nav-icon.nav-icon {
+      position: relative;
+      z-index: 3;
+      width: 30px;
+      height: 20px;
+      transform: rotate(0);
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+
+      &::after,
+      &::before {
+         content: none;
+      }
+
+      span {
+         display: block;
+         position: absolute;
+         height: 2px;
+         width: 100%;
+         background: #fff;
+         border-radius: 0;
+         opacity: 1;
+         left: 0;
+         transform: rotate(0);
+         transition: 0.25s ease-in-out;
+
+         &:nth-child(1) {
+            top: 0;
+            transform-origin: left center;
+         }
+
+         &:nth-child(2) {
+            top: 11px;
+            transform-origin: left center;
+         }
+
+         &:nth-child(3) {
+            top: 22px;
+            transform-origin: left center;
+         }
+      }
+   }
+}
+
+.mobile-nav-control {
+   &:checked {
+      ~ .mobile-nav {
+         transform: translateX(0);
+      }
+
+      ~ .nav-icon {
+         span {
+            &:nth-child(1) {
+               transform: rotate(45deg);
+               top: 5px;
+               left: 5px;
+            }
+
+            &:nth-child(2) {
+               width: 0;
+               opacity: 0;
+            }
+
+            &:nth-child(3) {
+               transform: rotate(-45deg);
+               top: 29px;
+               left: 4px;
+            }
+         }
+      }
+   }
+}
+
+.mobile-nav {
+   width: 310px;
+   height: 100vh;
+   z-index: 2;
+   left: 0;
+   bottom: 0;
+   position: fixed;
+   transform: translateX(-100%);
+   transition: all 0.95s cubic-bezier(.81,.01,.15,.995);
+   
+   .collapsible {
+      width: 100%;
+      
+      .collapsible-body {
+         background-color: transparent;
+         
+         ul > li > a {
+            font-size: 1.3rem;
+            // line-height: 1.4;
+         }
+      }
+      
+      > li > a, > li > div  {
+         padding-left: 40px;
+         font-size: 2.2rem;
+         color: $primary-color;
+      }
+   }
+}
+
+.panel-nav {
+   position: fixed;
+   left: 0;
+   top: 0;
+   z-index: 999;
+   height: 60px;
+   background-color: $primary-color;
+   border-bottom: 1px solid $secondary-color;
+   box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.2);
+
+   a {
+      color: #fff;
+   }
+}
+
+.opportunity-nav.opportunity-nav {
+   height: 50px;
+
+   i,
+   nav i.material-icons {
+      font-size: 25px;
+      height: 100%;
+      line-height: 2;
+   }
+}

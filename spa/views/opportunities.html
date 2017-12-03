@@ -1,0 +1,82 @@
+<sv-header name="opp.viewInfo"></sv-header>
+<section class="main">
+   <form name="searchForm" class="search-form" ng-submit="opp.searchArg ? opp.search(1): opp.load(1)" novalidate>
+      <div class="input-field flex flex-top flex-center">
+         <input id="search" name="arg" type="text" ng-model="opp.searchArg" required>
+         <label for="search" class="flex"><i class="material-icons">search</i>Busca</label>
+         <button class="btn btn-flat" type="submit" name="submit"> <i class="material-icons">search</i></button>
+      </div>
+   </form>
+   <div class="container">
+      <ul class="masonry opportunity-list" ng-if="opp.list.length">
+         <li class="item fade" ng-repeat="o in opp.list">
+            <article sv-toast class="card sticky-action opportunity-item">
+               <div class="card-image">
+                  <img ng-src="{{ o.photo ? opp.public +'/'+o.photo: 'assets/images/ginastica.jpg'}}" alt="" />
+                  <a ng-click="opp.insertVoluntary(o, show )" ng-if="isAuthenticated && opp.user.type == 1" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons" title="Tenho interesse">add</i></a>
+               </div>
+               <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">{{o.title | excerpt: 25}}<i class="title-action material-icons">more_vert</i></span>
+                  <p>{{o.description | excerpt: 100}}</p>
+               </div>
+               <div class="card-action">
+                  <a class="" href="#/oportunidades/{{o._id}}">Saiba mais</a>
+               </div>
+               <div class="card-reveal info">
+                  <span class="card-title grey-text text-darken-4">Informações<i class="material-icons right">close</i></span>
+                  <ul>
+                     <li>
+                        <div class="info-title">{{o.responsible.name}}</div>
+                     </li>
+                     <li class="period flex">
+                        <div class="item text-center flex-item-1">
+                           <h6>Início</h6>
+                           <time datetime="{{o.period.startDate}}">{{o.period.startDate | date:'dd/MM/yyyy'}}
+                        </div>
+                        <div class="item text-center contet flex-item-1">
+                           <h6>Fim</h6>
+                           <time datetime="{{o.period.endDate}}">{{o.period.endDate | date:'dd/MM/yyyy'}}
+                        </div>
+                     </li>
+                     <li>
+                        <address class="address">
+                           <p class="address-item stret">
+                              <span class="acent-font">Rua:</span>
+                              {{o.address.street}}, {{o.address.number}}</p>
+                           <p class="address-item district">
+                              <span class="acent-font">Bairro:</span>
+                              {{o.address.district}}</p>
+                           <p class="address-item city">
+                              <span class="acent-font">Cidade:</span>
+                              {{o.address.city}} - {{o.address.state}}</p>
+                        <address>
+                     </li>
+                  </ul>
+               </div>
+            </article>
+         </li>
+      </ul>
+      
+      <div class="search-error" ng-if="opp.searchError == 404 && !opp.list.length">
+         <h5 class="404-feedback">Não há resultados para esta busca!</h5>
+         <button ng-click="opp.load(1)" class="browser-default"type="button" name="button"> Desfazer</button>
+      </div>
+      
+      <h5 class="404-feedback" ng-if="!opp.searchError && !opp.list.length">Não há Oportunidades cadastradas!</h5>
+      
+      <ul ng-if="opp.paginate.total > 10 && opp.list.length" class="pagination">
+         <li ng-class="{disabled: opp.paginate.page == 1}">
+            <a ng-if="opp.searchArg" ng-click="opp.paginate.page > 1 ? opp.search( (-1) ):''" href=""><i class="material-icons">chevron_left</i></a>
+            <a ng-if="!opp.searchArg" ng-click="opp.paginate.page > 1? opp.load(-1): ''" href=""><i class="material-icons">chevron_left</i></a>
+         </li>
+         
+         <li ng-if="opp.searchArg" ng-class="{active: opp.paginate.page == $index+1}" ng-repeat="i in opp.getNumber(opp.paginate.pages) track by $index" ng-click="opp.search( ($index+1) )"><a href="">{{$index+1}}</a></li>
+         <li ng-if="!opp.searchArg" ng-class="{active: opp.paginate.page == $index+1}" ng-repeat="i in opp.getNumber(opp.paginate.pages) track by $index" ng-click="opp.load($index+1)" class=""><a href="">{{$index+1}}</a></li>
+         
+         <li ng-class="{disabled: opp.paginate.pages == opp.paginate.page}">
+            <a ng-if="opp.searchArg" ng-click="opp.paginate.page != opp.paginate.pages ? opp.search( (0) ):''"><i class="material-icons">chevron_right</i></a>
+            <a ng-if="!opp.searchArg" ng-click="opp.paginate.page != opp.paginate.pages ? opp.load(0): ''"><i class="material-icons">chevron_right</i></a>
+         </li>
+      </ul>
+   </div>
+</section>

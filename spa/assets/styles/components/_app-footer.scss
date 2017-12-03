@@ -1,0 +1,40 @@
+.app-footer {
+   padding: 30px;
+   background-color: #0a0a0a;
+   color: #fff;
+   display: flex;
+   align-items: center;
+   letter-spacing: 1px;
+   
+   img {
+      width: 50px;
+      height: 50px;
+      animation: heartbeat 1.5s infinite;
+   }
+   span {
+      font-size: .8rem;
+   }
+   
+   a {
+      display: inline-block;
+      color: #ff1065;
+   }
+   
+   
+   @keyframes heartbeat {
+    0%,100%,40%,80% {
+        -webkit-transform: scale(.75);
+        transform: scale(.75)
+    }
+
+    20% {
+        -webkit-transform: scale(.85);
+        transform: scale(.85)
+    }
+
+    60% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+}

@@ -1,0 +1,54 @@
+<section class="last-opportunities black">
+   <div class="container row">
+      <h3 class="white-text acent-font text-center">Nossas oportunidades
+         <hr class="sv-separator">
+      </h3>
+      
+      <ul class="col s12 l6 opportunities-list">
+         <li class="opportunities-item" ng-repeat="o in getNumber(3) track by $index">
+            <a  class="flex" href="#/oportunidades/{{opps[$index]._id}}">
+               <time class="featured-time white-text flex flex-column flex-middle flex-center">
+                  <span>{{getDate(opps[$index].period.startDate).day}}</span>
+                  <b>{{getDate(opps[$index].period.startDate).month}}</b>
+               </time>
+               <div class="content">
+                  <strong class="title black-text">{{opps[$index].title}}</strong>
+                  <div class="flex flex-middle flex-wrap">
+                     <time>{{opps[$index].period.startDate | date: 'dd/MM/yyyy'}} | </time>
+                     <address class="">
+                        {{opps[$index].address.city}} - {{opps[$index+3].address.state}}
+                     </address>
+                  </div>
+               </div>
+               <div class="action flex flex-middle">
+                  <i class="material-icons">navigate_next</i>
+               </div>
+            </a>
+         </li>
+      </ul>
+      
+      <ul class="col s12 l6 opportunities-list">
+         <li class="opportunities-item" ng-repeat="o in getNumber(3) track by $index">
+            <a  class="flex" href="#/oportunidades/{{opps[$index+3]._id}}">
+               <time class="featured-time white-text flex flex-column flex-middle flex-center">
+                  <span>{{getDate(opps[$index+3].period.startDate).day}}</span>
+                  <b>{{getDate(opps[$index+3].period.startDate).month}}</b>
+               </time>
+               <div class="content">
+                  <strong class="title black-text">{{opps[$index+3].title}}</strong>
+                  <div class="flex flex-middle flex-wrap">
+                     <time>{{opps[$index+3].period.startDate | date: 'dd/MM/yyyy'}} | </time>
+                     <address class="">
+                        {{opps[$index+3].address.city}} - {{opps[$index+3].address.state}}
+                     </address>
+                  </div>
+               </div>
+               <div class="action flex flex-middle">
+                  <i class="material-icons">navigate_next</i>
+               </div>
+            </a>
+         </li>
+      </ul>
+      
+   </div>
+</section>

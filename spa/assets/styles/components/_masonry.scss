@@ -1,0 +1,20 @@
+.masonry {
+   column-count: 1;
+   column-gap: 0;
+
+   > .item {
+      break-inside: avoid;
+      padding: 10px;
+      
+      & > *{ 
+         margin: 0;
+      }
+   }
+   
+   @media all and (min-width: 661px) {
+      column-count: 2;
+   }
+   @media all and (min-width: 1092px) {
+      column-count: 3;
+   }
+}

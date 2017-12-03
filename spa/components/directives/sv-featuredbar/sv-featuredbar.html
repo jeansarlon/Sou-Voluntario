@@ -1,0 +1,23 @@
+<nav sv-tooltip role="navigation" class="featuredbar z-2" itemscope itemtype="http://schema.org/SiteNavigationElement">
+   <div class="nav-wrapper">
+      <ul class="">
+         <li ng-if="data.navigations.back"><a href="painel/#/{{data.navigations.back.route}}" title="voltar"><i class="material-icons">keyboard_arrow_left</i></a></li>
+         <li title="voltar"> {{data.title}}</li>
+      </ul>
+      
+      <ul ng-if="data.navigations.actions">
+         <li ng-repeat="i in data.navigations.actions track by $index">
+            
+            <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="{{i.title}}" title="{{i.title}}" ng-if="i.click" ng-click="i.click()">
+               <i class="material-icons">{{i.icon}}</i>
+            </a>
+            
+            <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="{{i.title}}" title="{{i.title}}" ng-if="i.href" href="{{'painel/#/'+ i.href}}">
+               <i class="material-icons">{{i.icon}}</i>
+            </a>
+         </li>
+      </ul>
+   </div>
+</nav>
+
+

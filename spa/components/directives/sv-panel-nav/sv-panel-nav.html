@@ -1,0 +1,51 @@
+<nav id="slide-out" class="panel side-nav fixed">
+   <ul>
+      <li>
+         <div class="user-view">
+            <div class="background">
+               <img src="assets/images/panel.jpg">
+            </div>
+            <a href="painel/#/home/"><img ng-if="!user.photo" class="circle" ng-src="assets/images/default_user.svg"></a>
+            <a href="painel/#/home/"><img ng-if="user.photo" class="circle" ng-src="{{public}}/{{user.photo}}"></a>
+            <a href=""><span class="white-text name">{{user.name}}</span></a>
+            <a href=""><span class="white-text">{{user.email}}</span></a>
+         </div>
+      </li>
+      <ul class="collapsible" data-collapsible="accordion">
+         <li>
+            <div class="collapsible-header"><i class="material-icons">new_releases</i>Oportunidades</div>
+            <div class="collapsible-body">
+               <ul>
+                  <li ng-if="user.type === 0"><a href="/painel/#/oportunidade/cadastrar"><i class="material-icons">add</i>Cadastrar</a></li>
+                  <li><a href="/painel/#/oportunidades/"><i class="material-icons">edit</i>Gerenciar</a></li>
+               </ul>
+            </div>
+         </li>
+         <li>
+            <div class="collapsible-header"><i class="material-icons">settings</i>Configurações</div>
+            <div class="collapsible-body">
+               <ul>
+                  <li><a href="/painel/#/configuracoes"><i class="material-icons">assignment_ind</i>Dados</a></li>
+               </ul>
+            </div>
+         </li>
+      </ul>
+      <li><a class="subheader">Suporte</a></li>
+      <li><a class="" href="#!">Reportar bugs</a></li>
+      <li class="logout">
+         <div ng-click="logout()" class="collapsible-header"><i class="material-icons">lock</i>Sair</div>
+      </li>
+   </ul>
+</nav>
+
+
+<nav class="panel-nav">
+
+   <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">SouVoluntário</a>
+      <ul class="right" sv-tooltip>
+         <li class="hide-on-med-and-down"><a class="tooltipped" ng-click="logout()" data-position="bottom" data-delay="50" data-tooltip="Sair"><i class="material-icons">lock</i></a></li>
+         <li class=""><a data-activates="slide-out" class="button-collapse"><i class="material-icons">more_vert</i></a></li>
+      </ul>
+   </div>
+</nav>

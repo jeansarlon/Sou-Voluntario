@@ -1,0 +1,25 @@
+<div class="panel-container">
+   <sv-featuredbar data="panel.viewInfo"></sv-featuredbar>
+   <div class="container">
+      <div class="wrapper">
+         <div class="row">
+            <div class="col s12">
+               <ul class="collection">
+                  <li ng-repeat="o in panel.opportunities track by $index" class=" collection-item avatar">
+                     <article>        
+                        <img ng-src="{{panel.public}}/{{o.photo}}" alt="" class="circle">
+                        <span class="title"><b>{{o.title}}<b></span>
+                        <p>{{o.period.startDate | date:'dd/MM/yyyy'}}<br> 
+                        </p>
+                        <div href="#!" class="secondary-content">
+                           <a ng-if="panel.user.type == 0" href="painel/#/oportunidades/{{o._id}}" class=""><i class="material-icons">send</i></a>
+                           <a ng-if="panel.user.type == 1" href="painel/#/oportunidades/{{o._id}}" class=""><i class="material-icons">send</i></a>
+                        </div>
+                     </article>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,32 @@
+<ul class="collapsible" data-collapsible="accordion">
+   <li>
+      <a href="#/" ng-click="sideControl = false" class="collapsible-header">Home</a>
+   </li>
+   <li>
+      <a href="#/sobre" ng-click="sideControl = false" class="collapsible-header">Sobre nós</a>
+   </li>
+   <li>
+      <div class="collapsible-header">Voluntário</div>
+      <div class="collapsible-body">
+         <ul>   
+            <li><a href="#/cadastro/voluntario" ng-click="sideControl = false" class="">Cadastro</a></li>
+            <li><a href="#/oportunidades" ng-click="sideControl = false" class="">Oportunidades</a></li>
+         </ul>
+      </div>
+   </li>
+   <li>
+      <div class="collapsible-header">Organizações</div>
+      <div class="collapsible-body">
+         <ul>   
+            <li><a ng-click="sideControl = false" href="#/cadastro/organizacao" class="">Cadastro</a></li>
+            <li><a ng-click="sideControl = false" href="#/organizacoes" class="">Organizaçoes cadastradas</a></li>
+         </ul>
+      </div>
+   </li>
+   <li ng-if="!isAuthenticated">
+      <a href="painel/#" ng-click="sideControl = false" class="collapsible-header">Login</a>
+   </li>
+   <li ng-if="isAuthenticated">
+      <a href="painel/#" ng-click="sideControl = false" class="collapsible-header">acesse o painel</a>
+   </li>
+</ul>

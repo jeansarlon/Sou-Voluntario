@@ -1,0 +1,101 @@
+<div class="panel-container">
+   <sv-featuredbar data="panel.viewInfo"></sv-featuredbar>
+   <div class="container">
+      <div class="wrapper">
+         <div class="row card">
+            <form name="OppForm" sv-form class="opp-register" enctype="multipart/form-data" ng-submit="panel.createOpp(OppForm)" novalidate>
+               <div class="card-image">
+                  <sv-input-file class="inputfile" key="panel.file" fm="panel.formData.image"></sv-input-file>
+                  <label ng-if="!panel.file" class="flex flex-center flex-middle" for="file">
+                     <span>Selecione uma imagem</span>
+                  </label>
+                  <img ng-if="panel.file" class="input-preview" ng-src="{{panel.file}}">
+                  <button ng-class="{'active': panel.file}" class=" flex flex-middle btn-close" ng-click="panel.removeFile()" name="button">
+                     <span>Remover</span>
+                     <i class="material-icons">clear</i>
+                  </button>
+               </div>
+               <div class="card-content col s12">
+                  <div class="row">
+                     <div class="input-field col s12">
+                        <input name="title" id="title" type="text" class="" ng-model="panel.formData.title" required>
+                        <label class="" for="title">Titulo</label>
+                     </div>
+                  </div>
+
+                  <div class="row">
+                     <div class="input-field col s12">
+                        <textarea name="description" id="textarea1" class="materialize-textarea" ng-model="panel.formData.description" required></textarea>
+                        <label for="textarea1">Descrição</label>
+                     </div>
+                  </div>
+                  
+                  <div class="row">
+                     <div class="input-field col s12 m6">
+                        <input name="startDate" type="date" class="" ng-model="panel.formData.period.startDate" required></textarea>
+                        <label class="active" for="textarea1">Data de inicio</label>
+                     </div>
+                     <div class="input-field col s12 m6">
+                        <input name="endDate" type="date" class="" ng-model="panel.formData.period.endDate" required></textarea>
+                        <label class="active" for="textarea1">Data de fim</label>
+                     </div>
+                  </div>
+                     
+                  <div class="row">
+                     <div class="input-field col s12 m4">
+                        <input ui-mask="99999-999" ui-options="uiOption" name="CEP" id="CEP" type="text" class="" ng-model="panel.formData.address.CEP" required>
+                        <label for="CEP">CEP</label>
+                     </div>
+                     
+                     <div class="input-field col s12 m4">
+                        <select name="state" ng-model="panel.formData.address.state" required>
+                           <option value="" disabled selected>Estado</option>
+                           <option value="RS">RS</option>
+                        </select>
+                     </div>
+                     
+                     <div class="input-field col s12 m4">
+                        <select name="city" ng-model="panel.formData.address.city" required>
+                           <option value="" disabled selected>Cidade</option>
+                           <option value="Charqueadas">Charqueadas</option>
+                           <option value="Porto Alegre">Porto Alegre</option>
+                           <option value="Canoas">Canoas</option>
+                           <option value="Sapucaia">Sapucaia</option>
+                        </select>
+                     </div>
+                  </div>
+
+                  <div class="row">
+                     <div class="input-field col s12 m4">
+                        <input name="street" id="street" type="text" class="" ng-model="panel.formData.address.street" required>
+                        <label for="street">Rua</label>
+                     </div>
+                     <div class="input-field col s12 m1">
+                        <input name="number" id="number" type="text" class="" ng-model="panel.formData.address.number" required>
+                        <label for="number">Nº</label>
+                     </div>
+                     
+                     <div class="input-field col s12 m3">
+                        <input name="district" id="district" type="text" class="" ng-model="panel.formData.address.district" required>
+                        <label for="district">Vila</label>
+                     </div>
+                     
+                     <div class="input-field col s12 m4">
+                        <input name="complement" id="complement" type="text" class="" ng-model="panel.formData.address.complement" required>
+                        <label for="complement">Complemento</label>
+                     </div>
+                  </div>
+                     
+                  <div class="chips" sv-tag></div>
+                     
+                  <div class="row">
+                     <div class="input-field col s12">
+                        <button type="submit" class="btn btn-flat">Enviar</button>
+                     </div>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>

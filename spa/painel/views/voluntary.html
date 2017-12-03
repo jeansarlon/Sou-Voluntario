@@ -1,0 +1,134 @@
+<div class="panel-container">
+   <sv-featuredbar data="panel.viewInfo"></sv-featuredbar>
+   <div class="container">
+      <div class="wrapper" sv-form>
+         <div class="row">
+            <div class="col s12">
+               <div class="card user-card">
+                  <div class="card-content">
+                     <div class="card-title">
+                        <div class="photo-upload">
+                           <sv-input-file class="inputfile" key="panel.file" fm="panel.fileData.image"></sv-input-file>
+                           <label ng-class="{empty: !panel.file}" class="flex flex-center flex-middle" for="file" ng-style="panel.fileData.style"></label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col s12">
+               <ul class="data-list">
+                  <li class="item">
+                     <div class="content">
+                        <div class="data"><span>Nome:</span>
+                           <div class="flex">{{panel.user.name}}</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item">
+                     <div class="content">
+                        <div class="data"><span>CPF:</span>
+                           <div class="flex">{{panel.user.CPF}}</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item">
+                     <div class="content">
+                        <div class="data"><span>Email:</span>
+                           <div class="flex">{{panel.user.email}}</div>
+                        </div>
+                     </div>
+                  </li>
+
+                  <li class="item">
+                     <div class="content">
+                        <div class="data"><span>Gênero:</span>
+                           <div class="flex">{{panel.user.gender}}</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item">
+                     <div class="content">
+                        <div class="data"><span>Disponibilidade:</span>
+                           <div class="flex">{{panel.user.availability}}</div>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col s12">
+               <ul class="data-list">
+                  <li class="item">
+                     <div class="content">
+                        <div class="data"><span>CEP:</span>
+                           <div class="flex">{{panel.user.address.CEP}}</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item">
+                     <div class="content">
+                        <div class="data"><span>Rua:</span>
+                           <div class="flex">{{panel.user.address.street}}</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item">
+                     <div class="content">
+                        <div class="data"><span>Nº:</span>
+                           <div class="flex">{{panel.user.address.number}}</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item">
+                     <div class="content">
+                        <div class="data"><span>Bairro:</span>
+                           <div class="flex">{{panel.user.address.district}}</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item">
+                     <div class="content">
+                        <div class="data"><span>Cidade:</span>
+                           <div class="flex">{{panel.user.address.city}}</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item" >
+                     <div class="content">
+                        <div class="data"><span>Estado:</span>
+                           <div class="flex">{{panel.user.address.state}}</div>
+                        </div>
+                     
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col s12">
+               <ul class="data-list">
+                  <li class="item">
+                     <div class="content">
+                        <div class="data"><span>Telefone:</span>
+                           <div class="flex">{{panel.user.contact.phone}}</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item">
+                     <div class="content">
+                        <div class="data"><span>Celular:</span>
+                           <div class="flex">{{panel.user.contact.cellPhone}}</div>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

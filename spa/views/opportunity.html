@@ -1,0 +1,65 @@
+<sv-header name="opportunity.viewInfo"></sv-header>
+<div class=" opportunity-page">
+   <div class="opportunity-description featured-text">
+      <div class="container">
+         <p>{{opportunity.opportunity.description}}</p>
+      </div>
+   </div>
+   <div class="container">
+      <ul class="collection opportunity-info">
+         <li class="collection-item flex flex-space-between">
+            <span class="title">Criada por:</span>
+            <a class="flex flex-middle" href="#/organizacoes/{{opportunity.opportunity.responsible._id}}">{{opportunity.opportunity.responsible.name}}<i class="material-icons">navigate_next</i></a>
+         </li>
+         
+         <li class="collection-item flex flex-space-between">
+            <span class="title">Período</span>
+            <p>De {{opportunity.opportunity.period.startDate | date:'dd/MM/yyyy'}} até {{opportunity.opportunity.period.endDate | date:'dd/MM/yyyy'}}</p>
+         </li>
+         
+         <li class="collection-item flex flex-space-between">
+            <span class="title">Voluntários interessados</span>
+            <p>{{opportunity.opportunity.volunteers.length}}</p>
+         </li>
+         
+         <li class="collection-item">
+            <h5 class="text-center">Onde:</h5>
+            <p class="text-center">Rua {{opportunity.opportunity.address.street}} nº{{opportunity.opportunity.address.number}} bairro {{opportunity.opportunity.address.district}}, {{opportunity.opportunity.address.city}} - {{opportunity.opportunity.address.state}}</p>   
+         </li>
+      </ul>
+      <div class="text-center" ng-if="opportunity.user && opportunity.user.type == 1">
+         <a href="" ng-click="opportunity.insertVoluntary()" class="btn btn-flat">Quero Participar!</a>
+      </div>
+      
+      <div class="row">
+            <div class="col s12">
+               <div class="card">
+                  <div class="card-content">
+                     <ul class="evaluations" ng-if="opportunity.opportunity.evaluations">
+                        <li class="evaluations-item" ng-repeat="e in opportunity.opportunity.evaluations">
+                           <figure class="evaluation-image">
+                              <img 
+                              ng-src="{{e.voluntary.photo ? opportunity.public +'/'+ e.voluntary.photo : ''}}" 
+                              alt="{{e.voluntary.name}}"/>
+                           </figure>
+                           <div class="content">
+                              <p class="evaluation-title">{{e.voluntary.name}}</p>
+                              <p class="evaluation-comment">{{e.comment}}</p>
+                              <p class="evaluation-comment">
+                                 <jk-rating-stars
+                                 max-rating="5"
+                                 rating="e.stars"
+                                 read-only="true">
+                                 </jk-rating-stars>
+                              </p>
+                           </div>
+                        </li>
+                     </ul>
+                     <p ng-if="opportunity.opportunity.evaluations.length == 0" class="center-text">Ainda não há comentário!</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

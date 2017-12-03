@@ -1,0 +1,248 @@
+<div class="panel-container">
+   <sv-featuredbar data="settings.viewInfo"></sv-featuredbar>
+   <div class="container">
+      <div class="wrapper" sv-form>
+         <div class="row">
+            <div class="col s12">
+               <div class="card user-card">
+                  <div class="card-content">
+                     <div class="card-title">
+                        <div class="photo-upload">
+                           <sv-input-file class="inputfile" key="settings.file" fm="settings.fileData.image"></sv-input-file>
+                           <label ng-class="{empty: !settings.file}" class="flex flex-center flex-middle" for="file" ng-style="settings.fileData.style">
+                              <span>Selecione uma imagem</span>
+                              <img  ng-if="settings.file" class="input-preview" ng-src="{{settings.file}}">
+                           </label>
+                        </div>
+                        
+                        <div ng-if="settings.user.type == 0" class="mission text-center">
+                           <p class="fade" ng-if="!settings.mission">{{settings.user.mission}}</p>
+                           <div class="fade" ng-if="settings.mission">
+                              <textarea id="textarea1" class="text-center materialize-textarea" ng-model="settings.user.mission"></textarea>
+                              <label class="active" for="textarea1">Missão</label>
+                           </div>
+                              <a class="right" href="" ng-if="!settings.mission"ng-click="settings.mission = !settings.mission"><i class="material-icons">edit</i></a>
+                              <a class="right" href="" ng-if="settings.mission" ng-click="settings.mission = !settings.mission; settings.save()"><i class="material-icons">check</i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col s12">
+               <ul class="data-list">
+                  <li class="item" ng-class="{active: settings.name}">
+                     <div class="content">
+                        <div class="data"><span>Nome:</span>
+                           <div class="flex">{{settings.user.name}}<a href="" ng-click="settings.name = !settings.name"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <input class="browser-default" type="text" ng-model="settings.user.name"></input>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.name = !settings.name; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+                  <li ng-if="settings.user.type == 1" class="item" ng-class="{active: settings.CPF}">
+                     <div class="content">
+                        <div class="data"><span>CPF:</span>
+                           <div class="flex">{{settings.user.CPF}}<a href="" ng-click="settings.CPF = !settings.CPF"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <input class="browser-default" type="text" ng-model="settings.user.CPF"></input>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.CPF = !settings.CPF; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item" ng-class="{active: settings.email}">
+                     <div class="content">
+                        <div class="data"><span>Email:</span>
+                           <div class="flex">{{settings.user.email}}<a href="" ng-click="settings.email = !settings.email"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <input class="browser-default" type="email" ng-model="settings.user.email"></input>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.email = !settings.email; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+                  <li ng-if="settings.user.type == 0" class="item" ng-class="{active: settings.CNPJ}">
+                     <div class="content">
+                        <div class="data"><span>CNPJ:</span>
+                           <div class="flex">{{settings.user.CNPJ}}<a href="" ng-click="settings.CNPJ = !settings.CNPJ"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <input ui-mask="999-999999999/99" ui-options="uiOption" class="browser-default" type="text" ng-model="settings.user.CNPJ"></input>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.CNPJ = !settings.CNPJ; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+                  <li ng-if="settings.user.type == 0" class="item" ng-class="{active: settings.site}">
+                     <div class="content">
+                        <div class="data"><span>Site:</span>
+                           <div class="flex">{{settings.user.site}}<a href="" ng-click="settings.site = !settings.site"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <input class="browser-default" type="text" ng-model="settings.user.site"></input>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.site = !settings.site; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+                  <li ng-if="settings.user.type == 0" class="item" ng-class="{active: settings.responsible}">
+                     <div class="content">
+                        <div class="data"><span>Responsável:</span>
+                           <div class="flex">{{settings.user.responsible}}<a href="" ng-click="settings.responsible = !settings.responsible"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <input class="browser-default" type="text" ng-model="settings.user.responsible"></input>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.responsible = !settings.responsible; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+
+                  <li ng-if="settings.user.type == 1" class="item" ng-class="{active: settings.gender}">
+                     <div class="content">
+                        <div class="data"><span>Gênero:</span>
+                           <div class="flex">{{settings.user.gender}}<a href="" ng-click="settings.gender = !settings.gender"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <select class="no-material" ng-model="settings.user.gender">
+                              <option value="" disabled>Gênero</option>
+                              <option value="Masculino">Masculino</option>
+                              <option value="Feminino">Feminino</option>
+                           </select>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.gender = !settings.gender; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+                  <li ng-if="settings.user.type == 1" class="item" ng-class="{active: settings.availability}">
+                     <div class="content">
+                        <div class="data"><span>Disponibilidade:</span>
+                           <div class="flex">{{settings.user.availability}}<a href="" ng-click="settings.availability = !settings.availability"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <select class="" ng-model="settings.user.availability">
+                              <option value="" disabled selected>Disponibilidade</option>
+                              <option value="Ocasional">Ocasional</option>
+                              <option value="Regular">Regular</option>
+                           </select>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.availability = !settings.availability; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col s12">
+               <ul class="data-list">
+                  <li class="item" ng-class="{active: settings.CEP}">
+                     <div class="content">
+                        <div class="data"><span>CEP:</span>
+                           <div class="flex">{{settings.user.address.CEP}}<a href="" ng-click="settings.CEP = !settings.CEP"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <input ui-mask="99999-999" ui-options="uiOption" class="browser-default" type="text" ng-model="settings.user.address.CEP"></input>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.CEP = !settings.CEP; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item" ng-class="{active: settings.street}">
+                     <div class="content">
+                        <div class="data"><span>Rua:</span>
+                           <div class="flex">{{settings.user.address.street}}<a href="" ng-click="settings.street = !settings.street"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <input class="browser-default" type="text" ng-model="settings.user.address.street"></input>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.street = !settings.street; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item" ng-class="{active: settings.number}">
+                     <div class="content">
+                        <div class="data"><span>Nº:</span>
+                           <div class="flex">{{settings.user.address.number}}<a href="" ng-click="settings.number = !settings.number"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <input class="browser-default" type="text" ng-model="settings.user.address.number"></input>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.number = !settings.number; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item" ng-class="{active: settings.district}">
+                     <div class="content">
+                        <div class="data"><span>Bairro:</span>
+                           <div class="flex">{{settings.user.address.district}}<a href="" ng-click="settings.district = !settings.district"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <input class="browser-default" type="text" ng-model="settings.user.address.district"></input>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.district = !settings.district; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item" ng-class="{active: settings.city}">
+                     <div class="content">
+                        <div class="data"><span>Cidade:</span>
+                           <div class="flex">{{settings.user.address.city}}<a href="" ng-click="settings.city = !settings.city"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <select class="no-material" ng-model="settings.user.address.city">
+                              <option value="" disabled>Cidade</option>
+                              <option value="Charqueadas">Charqueadas</option>
+                              <option value="Porto Alegre">Porto Alegre</option>
+                              <option value="Canoas">Canoas</option>
+                              <option value="Sapucaia">Sapucaia</option>
+                           </select>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.city = !settings.city; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item" ng-class="{active: settings.state}">
+                     <div class="content">
+                        <div class="data"><span>Estado:</span>
+                           <div class="flex">{{settings.user.address.state}}<a href="" ng-click="settings.state = !settings.state"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <select class="no-material" name="state" ng-model="settings.user.address.state">
+                              <option value="" disabled>Estado</option>
+                              <option value="RS">RS</option>
+                           </select>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.state = !settings.state; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col s12">
+               <ul class="data-list">
+                  <li class="item" ng-class="{active: settings.phone}">
+                     <div class="content">
+                        <div class="data"><span>Telefone:</span>
+                           <div class="flex">{{settings.user.contact.phone}}<a href="" ng-click="settings.phone = !settings.phone"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <input ui-mask="(99)99999-9999" ui-options="uiOption"class="browser-default" type="text" ng-model="settings.user.contact.phone"></input>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.phone = !settings.phone; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item" ng-class="{active: settings.cellPhone}">
+                     <div class="content">
+                        <div class="data"><span>Celular:</span>
+                           <div class="flex">{{settings.user.contact.cellPhone}}<a href="" ng-click="settings.cellPhone = !settings.cellPhone"><i class="material-icons">edit</i></a></div>
+                        </div>
+                        <div class="edit flex-space-between">
+                           <input ui-mask="(99)9999-9999" ui-options="uiOption" class="browser-default" type="text" ng-model="settings.user.contact.cellPhone"></input>
+                           <div class="actions flex flex-middle"><a href="" ng-click="settings.cellPhone = !settings.cellPhone; settings.save()"><i class="material-icons">check</i></a></div>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

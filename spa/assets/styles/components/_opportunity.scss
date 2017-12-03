@@ -1,0 +1,35 @@
+.opportunity-list {
+   .opportunity-item {
+      > .info {
+         .info-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+         }
+         .period {
+            margin-left: -20px;
+            width: calc(100% + 40px);
+            background: $primary-color;
+            padding: 30px 0;
+            color: #fff;
+            
+            > .item {
+               &:first-of-type{
+                  border-right: 1px solid rgba(255,255,255,.5);
+               }
+            }
+         }
+         
+         .address {
+            .address-item {
+               padding: 10px 0;
+               border-bottom: 1px solid rgba(0,0,0,.3);
+               
+               span {
+                  font-style: normal;
+                  padding-right: 10px;
+               }
+            }
+         }
+      }
+   }
+}

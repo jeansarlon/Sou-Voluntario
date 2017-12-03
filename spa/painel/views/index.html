@@ -1,0 +1,36 @@
+<div class="panel-home panel-container">
+   <sv-featuredbar data="panel.viewInfo"></sv-featuredbar>
+   <div class="welcome">
+      <div class="wrapper">
+         <div class="card flex flex-middle flex-center">
+            <div class="card-content">
+               <h1 class="text-center">Bem vindo ao <b>SouVoluntário!</b> comece por aqui!</h1>
+               <nav class="welcome-navigation">
+                  <ul class="row ">
+                     <li ng-if="panel.user.type == 0" class="col s12 text-center" ng-class="{m4:panel.user.type == 0, m6:panel.user.type == 1}">
+                        <a href="/painel/#/oportunidade/cadastrar/">
+                           <i class="material-icons">add</i>
+                        </a>
+                        <h3>Cadastre uma oportunidade</h3>
+                     </li>
+                     
+                     <li class="col s12 text-center" ng-class="{m4:panel.user.type == 0, m6:panel.user.type == 1}">
+                        <a href="/painel/#/oportunidades">
+                           <i class="material-icons">new_releases</i>
+                        </a>
+                        <h3>Administre suas oportunidades</h3>
+                     </li>
+                     
+                     <li class="col s12 text-center" ng-class="{m4:panel.user.type == 0, m6:panel.user.type == 1}">
+                        <a href="/painel/#/configuracoes">
+                           <i class="material-icons">settings</i>
+                        </a>
+                        <h3>Gerencie sua conta</h3>
+                     </li>
+                  </ul>
+               </nav>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

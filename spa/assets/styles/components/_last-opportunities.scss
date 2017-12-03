@@ -1,0 +1,79 @@
+.last-opportunities {
+   background: #000 url('../images/img-1.jpg') center / cover no-repeat;
+   background-attachment: fixed;
+   .sv-separator {
+      margin: 20px auto;
+   }
+   .container {
+      position: relative;
+      z-index: 2;
+   }
+   
+   .opportunities-list {
+      .opportunities-item {
+         background-color: #fff;
+         
+         margin: 15px;
+         
+         .featured-time {
+            background-color: $primary-color;
+            flex: .4;
+            line-height: 1.2;
+            span {
+               font-size: 1rem;
+            }
+            b {
+               font-size: 1.2rem;
+               text-transform: uppercase;
+            }
+         }
+         .content {
+            padding:10px;
+            flex: 1;
+            
+            .title {
+               font-weight: bold;
+               font-size: 1.2rem;
+            }
+            
+            time {
+               display: block;
+            }
+            
+            @media all and (min-width: 601px) {
+               padding:20px;
+            }
+         }
+         .action {
+            
+            i {
+               transition: all .3s ease;
+            }
+            
+            @media all and (min-width: 601px) {
+               padding: 0 10px;
+            }
+         }
+         
+         &:hover {
+            .action {
+               i {
+                  transform: translateX(5px) scale(1.3);
+               }
+            }
+         }
+      }
+   }
+   &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0,0,0,.5);
+      z-index: 1;
+   }
+}
+   

@@ -1,0 +1,43 @@
+<sv-header name="org.viewInfo"></sv-header>
+<section class="main">
+   <form name="searchForm" class="search-form" ng-submit="org.search(searchForm)" novalidate>
+      <div class="input-field flex flex-top flex-center">
+         <input id="search" name="arg" type="text" ng-model="org.searchArg" required>
+         <label for="search" class="flex"><i class="material-icons">search</i>Busca</label>
+         <button class="btn btn-flat" type="submit" name="submit"> <i class="material-icons">search</i></button>
+      </div>
+   </form>
+   <div class="container">
+      <ul class="collection">
+         <li ng-repeat="o in org.list" class="collection-item avatar">
+            <img ng-src="{{org.public}}/{{o.photo}}" alt="" class="img-cover circle">
+            <span class="title">{{o.name}}</span>
+            <p>{{o.address.city}}</p>
+            <a href="#/organizacoes/{{o._id}}" class="secondary-content"><i class="material-icons">navigate_next</i></a>
+         </li>
+      </ul>
+      
+      
+         <div class="search-error" ng-if="org.searchError == 404 && !org.list.length">
+            <h5 class="404-feedback">Não há resultados para esta busca!</h5>
+            <button ng-click="org.load(1)" class="browser-default" type="button" name="button"> Desfazer</button>
+         </div>
+         <h5 class="404-feedback" ng-if="!org.searchError && !org.list.length">Não há Organizações cadastradas!</h5>
+         
+         
+         <ul ng-if="opp.paginate.total > 10 && opp.list.length" class="pagination">
+            <li ng-class="{disabled: opp.paginate.page == 1}">
+               <a ng-if="opp.searchArg" ng-click="opp.paginate.page > 1 ? opp.search( (-1) ):''" href=""><i class="material-icons">chevron_left</i></a>
+               <a ng-if="!opp.searchArg" ng-click="opp.paginate.page > 1? opp.load(-1): ''" href=""><i class="material-icons">chevron_left</i></a>
+            </li>
+            
+            <li ng-if="opp.searchArg" ng-class="{active: opp.paginate.page == $index+1}" ng-repeat="i in opp.getNumber(opp.paginate.pages) track by $index" ng-click="opp.search( ($index+1) )"><a href="">{{$index+1}}</a></li>
+            <li ng-if="!opp.searchArg" ng-class="{active: opp.paginate.page == $index+1}" ng-repeat="i in opp.getNumber(opp.paginate.pages) track by $index" ng-click="opp.load($index+1)" class=""><a href="">{{$index+1}}</a></li>
+            
+            <li ng-class="{disabled: opp.paginate.pages == opp.paginate.page}">
+               <a ng-if="opp.searchArg" ng-click="opp.paginate.page != opp.paginate.pages ? opp.search( (0) ):''"><i class="material-icons">chevron_right</i></a>
+               <a ng-if="!opp.searchArg" ng-click="opp.paginate.page != opp.paginate.pages ? opp.load(0): ''"><i class="material-icons">chevron_right</i></a>
+            </li>
+         </ul>
+   </div>
+</section>

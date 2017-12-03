@@ -1,0 +1,13 @@
+.featuredbar {
+   position: fixed;
+   background-color: darken($primary-color, 7);
+   box-shadow: 0 0 0 transparent;
+   color: #fff;
+   a{
+      color: #fff;
+   }
+   
+   @media all and (min-width: 993px) {
+      width: calc(100% - 300px);
+   }
+}
